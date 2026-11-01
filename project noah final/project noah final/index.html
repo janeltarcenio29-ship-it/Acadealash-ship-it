@@ -1,0 +1,2617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151C2C">
+  <script>try{var t=localStorage.getItem("acadaelash-theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <meta name="description" content="Acadaelash learning management system: courses, modules, assignments and grades.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="manifest.webmanifest">
+  <title>Acadaelash LMS | Learning Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+  <!-- Icon sprite (decorative) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-logo" viewBox="0 0 48 48"><path d="M24 3 42 9v14c0 11-8 18-18 22C14 41 6 34 6 23V9z" fill="#151C2C" stroke="#D6AD45" stroke-width="2" stroke-linejoin="round"/><path d="M24 7.5 38 12v11c0 8.2-5.6 14-14 17.6C15.6 37 10 31.2 10 23V12z" fill="none" stroke="#53657D" stroke-width="1"/><rect x="21.2" y="9.2" width="5.6" height="3" rx="1.2" fill="#E8731A"/><rect x="21.2" y="12.2" width="5.6" height="1.8" fill="#B35C0E"/><rect x="21.2" y="14" width="5.6" height="9.6" fill="#FFC93C"/><path d="M24 14v9.6" stroke="#F28C1E" stroke-width="1.4"/><path d="M21.2 23.6h5.6L24 28.4z" fill="#FBE3A6"/><path d="M23.1 26.8h1.8L24 28.4z" fill="#151C2C"/><path d="M9.8 29.6h28.4l-3 7H12.8z" fill="#D6AD45"/><text x="24" y="35.2" text-anchor="middle" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="6.4" font-weight="800" letter-spacing=".5" fill="#151C2C">LMS</text></symbol>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></symbol>
+      <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+      <symbol id="i-clipboard" viewBox="0 0 24 24"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/><path d="m9 14 2 2 4-4"/></symbol>
+      <symbol id="i-userplus" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></symbol>
+      <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/></symbol>
+      <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 14"/></symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+      <symbol id="i-upload" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></symbol>
+      <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.5" y2="16.5"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></symbol>
+      <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+      <symbol id="i-send" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+      <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="15.5 8.5 13.5 13.5 8.5 15.5 10.5 10.5 15.5 8.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13 6 19 12 13 18"/></symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
+    </defs>
+  </svg>
+
+  <div class="scrim" id="scrim"></div>
+
+  <aside aria-label="Sidebar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg></div>
+      <div>
+        <b>Acad<em class="wm">aelash</em></b>
+        <span>Learning Management System</span>
+      </div>
+    </div>
+
+    <nav id="nav" aria-label="Main">
+      <button data-view="dashboard"><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg><span>Dashboard</span></button>
+      <button data-view="courses"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><span>Courses</span></button>
+      <button data-view="modules"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg><span>Modules</span></button>
+      <button data-view="assignments"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg><span>Assignments</span></button>
+      <button data-view="enrollments"><svg class="ic" aria-hidden="true"><use href="#i-userplus"/></svg><span>Enrollments</span></button>
+      <button data-view="grades"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg><span>Grades</span></button>
+      <button data-view="profile"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg><span>Student Profile</span></button>
+    </nav>
+
+    <div id="viewbox" hidden>
+      <label>Viewing student
+        <select id="viewas" aria-label="Viewing student"></select>
+      </label>
+    </div>
+
+    <div class="foot">
+      <span class="uavatar" id="uavatar" aria-hidden="true"></span>
+      <span id="uname"></span>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="menu" id="menu" aria-label="Open portal menu" aria-expanded="false"><svg class="ic" aria-hidden="true"><use href="#i-menu"/></svg><span class="menu-t">Menu</span></button>
+        <span class="page-ic" id="page-ic" aria-hidden="true"><svg class="ic"><use href="#i-grid"/></svg></span>
+        <div>
+          <h1 id="title"></h1>
+          <p id="sub"></p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <div class="search" id="searchbox" role="search">
+          <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+          <input id="gsearch" type="search" placeholder="Search courses, modules, assignments, grades..." aria-label="Search the portal" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="sresults" aria-autocomplete="list">
+          <span class="spin" id="sspin" hidden aria-hidden="true"></span>
+          <button type="button" id="sclear" hidden aria-label="Clear search"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+          <div class="drop" id="sresults" role="listbox" aria-label="Search results" hidden></div>
+          <p class="sr" id="sstatus" role="status" aria-live="polite"></p>
+        </div>
+        <div class="bellwrap">
+          <button type="button" class="iconbtn" id="bell" aria-label="Notifications" aria-haspopup="true" aria-expanded="false" aria-controls="npanel"><svg class="ic" aria-hidden="true"><use href="#i-bell"/></svg><span class="badge-n" id="bellcount" hidden></span></button>
+          <div class="drop" id="npanel" aria-label="Notifications" hidden>
+            <div class="nhead"><b>Notifications</b><button type="button" class="textlink" id="nreadall">Mark all as read</button></div>
+            <div id="nlist"></div>
+          </div>
+        </div>
+        <div class="profilewrap" id="profilewrap">
+          <button type="button" class="profile-btn" id="profilebtn" aria-label="Account menu" aria-haspopup="true" aria-expanded="false" aria-controls="pmenu">
+            <span class="pavatar" id="pavatar" aria-hidden="true"></span>
+            <svg class="ic chev" aria-hidden="true"><use href="#i-chev"/></svg>
+          </button>
+          <div class="pmenu" id="pmenu" role="group" aria-label="Account menu" hidden>
+            <div class="pm-title" id="pm-settings">Settings</div>
+            <div class="pm-field">
+              <span class="pm-label" id="pm-appearance">Appearance</span>
+              <div class="seg" role="radiogroup" aria-labelledby="pm-appearance">
+                <button type="button" role="radio" aria-checked="true" data-theme-opt="light"><svg class="ic" aria-hidden="true"><use href="#i-sun"/></svg>Light Mode</button>
+                <button type="button" role="radio" aria-checked="false" data-theme-opt="dark"><svg class="ic" aria-hidden="true"><use href="#i-moon"/></svg>Dark Mode</button>
+              </div>
+            </div>
+            <hr class="pm-sep">
+            <button type="button" class="pm-logout" id="logout"><svg class="ic" aria-hidden="true"><use href="#i-logout"/></svg>Logout</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="view">
+
+      <!-- Dashboard -->
+      <section class="page" id="page-dashboard" data-title="Dashboard" data-sub="Overview of your learning activity" hidden>
+        <div class="hero">
+          <div class="hero-text">
+            <p class="hero-date" id="hero-date"></p>
+            <h2 id="hero-name">Welcome back</h2>
+            <p>Here is where your semester stands today.</p>
+          </div>
+          <div class="chips" id="hero-meta"></div>
+        </div>
+
+        <div class="stats">
+          <div class="stat" data-goto="courses" role="link" tabindex="0" aria-label="Enrolled courses: open courses">
+            <span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span>
+            <small>Enrolled courses</small><b id="st-courses" data-count>0</b>
+          </div>
+          <div class="stat" data-goto="courses" role="link" tabindex="0" aria-label="Total units: open courses">
+            <span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span>
+            <small>Total units</small><b id="st-units" data-count>0</b>
+          </div>
+          <div class="stat" data-goto="assignments" role="link" tabindex="0" aria-label="Pending assignments: open assignments">
+            <span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <small>Pending assignments</small><b id="st-pending" data-count>0</b>
+          </div>
+          <div class="stat" data-goto="grades" role="link" tabindex="0" aria-label="GPA: open grades">
+            <span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span>
+            <small>GPA (1.00 best, 5.00 fail)</small><b id="st-gpa" data-count data-max="5" data-invert>&mdash;</b>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <section class="explore" aria-labelledby="explore-h">
+          <div class="sec-head"><h2 id="explore-h">Explore the portal</h2></div>
+          <div class="tiles">
+            <button type="button" class="tile" data-goto="dashboard" data-tile="dashboard">
+              <span class="tile-ic"><svg class="ic" aria-hidden="true"><use href="#i-grid"/></svg></span>
+              <b>Dashboard</b><span class="tile-d">Deadlines, progress and activity at a glance.</span>
+              <span class="tile-go">Back to overview<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button type="button" class="tile" data-goto="courses" data-tile="courses">
+              <span class="tile-ic"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span>
+              <b>Courses</b><span class="tile-d">Enrolled courses, instructors and your curriculum.</span>
+              <span class="tile-go">Browse courses<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button type="button" class="tile" data-goto="modules" data-tile="modules">
+              <span class="tile-ic"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span>
+              <b>Modules</b><span class="tile-d">Lessons, quizzes and downloadable materials.</span>
+              <span class="tile-go">Start learning<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button type="button" class="tile" data-goto="assignments" data-tile="assignments">
+              <span class="tile-ic"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+              <b>Assignments</b><span class="tile-d">Instructions, deadlines and submissions.</span>
+              <span class="tile-go">Open assignments<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button type="button" class="tile" data-goto="enrollments" data-tile="enrollments">
+              <span class="tile-ic"><svg class="ic" aria-hidden="true"><use href="#i-userplus"/></svg></span>
+              <b>Enrollments</b><span class="tile-d">Add or drop courses and review your records.</span>
+              <span class="tile-go">Manage enrollment<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button type="button" class="tile" data-goto="grades" data-tile="grades">
+              <span class="tile-ic"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span>
+              <b>Grades</b><span class="tile-d">Scores, GPA and results for each course.</span>
+              <span class="tile-go">View grades<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+            <button type="button" class="tile" data-goto="profile" data-tile="profile">
+              <span class="tile-ic"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg></span>
+              <b>Student Profile</b><span class="tile-d">Personal details and your academic program.</span>
+              <span class="tile-go">View profile<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+            </button>
+          </div>
+        </section>
+
+        <div class="dash-grid">
+          <div class="dash-main">
+            <div class="sec-head">
+              <h2>My courses</h2>
+              <button class="textbtn" data-goto="courses">View all courses</button>
+            </div>
+            <div class="course-grid" id="dash-courses"></div>
+            <div class="card gap" id="dash-courses-empty" hidden>You are not enrolled in any course. Open Enrollments to add one.</div>
+
+            <div class="sec-head"><h2>Upcoming deadlines</h2></div>
+            <div class="tablewrap">
+              <table>
+                <thead>
+                  <tr><th>Assignment</th><th>Course</th><th>Due</th></tr>
+                </thead>
+                <tbody id="dash-body"></tbody>
+              </table>
+            </div>
+            <div class="card" id="dash-empty" hidden>Nothing due. You are all caught up.</div>
+          </div>
+
+          <div class="dash-side">
+            <section class="card panel-card clickable" data-goto="profile" role="link" tabindex="0" aria-label="Student information: open profile">
+              <h3>Student information</h3>
+              <div class="sinfo-head">
+                <div class="avatar sm" id="dp-avatar"></div>
+                <div><b id="dp-name"></b><small id="dp-id"></small></div>
+              </div>
+              <div class="rows">
+                <div><small>Program</small><span id="dp-program"></span></div>
+                <div><small>Year level</small><span id="dp-year"></span></div>
+                <div><small>Status</small><span id="dp-status"></span></div>
+              </div>
+            </section>
+
+            <section class="card panel-card clickable" data-goto="modules" role="link" tabindex="0" aria-label="Learning progress: open modules">
+              <h3>Progress</h3>
+              <div class="ring-row">
+                <div class="ring" role="img" aria-label="Assignments submitted">
+                  <svg viewBox="0 0 120 120" aria-hidden="true">
+                    <circle class="ring-bg" cx="60" cy="60" r="46"/>
+                    <circle class="ring-fg" id="dp-ring" cx="60" cy="60" r="46"/>
+                  </svg>
+                  <span id="dp-pct">0%</span>
+                </div>
+                <p id="dp-ring-text">No assignments yet.</p>
+              </div>
+              <div class="cc-row"><span>Courses graded</span><b id="dp-graded-text">0/0</b></div>
+              <div class="meter" aria-hidden="true"><i id="dp-graded"></i></div>
+              <div class="learn">
+                <small id="dp-latest">Learning modules are waiting in Modules.</small>
+                <button type="button" class="btn learn-btn" data-goto="modules">Continue in Modules<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+              </div>
+            </section>
+
+            <section class="card panel-card">
+              <h3>Announcements</h3>
+              <ul class="news" id="dash-news"></ul>
+            </section>
+
+            <section class="card panel-card" id="dash-sched-card" hidden>
+              <h3>My schedule</h3>
+              <ul class="news" id="dash-sched"></ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- Courses -->
+      <section class="page" id="page-courses" data-title="Courses" data-sub="Your enrolled courses and program curriculum" hidden>
+        <div class="sec-head"><h2>My courses</h2></div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Code</th><th>Course</th><th>Department</th><th>Units</th><th>Instructor</th><th>School year</th></tr>
+            </thead>
+            <tbody id="courses-body"></tbody>
+          </table>
+        </div>
+        <div class="card gap" id="courses-empty" hidden>You are not enrolled in any course. Open Enrollments to add one.</div>
+        <div class="sec-head"><h2 id="curr-title">Curriculum</h2></div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Code</th><th>Subject</th><th>Units</th><th>Year level</th><th>Semester</th></tr>
+            </thead>
+            <tbody id="curr-body"></tbody>
+          </table>
+        </div>
+        <div class="card" id="curr-empty" hidden>No subjects for this program yet.</div>
+      </section>
+
+      <!-- Modules -->
+      <section class="page" id="page-modules" data-title="Learning Modules" data-sub="Explore lessons, practice your skills, and track your learning progress." hidden>
+<div id="mod-root"></div>
+        <h3 class="mod-h">Downloadable materials</h3>
+        <div class="list" id="module-list"></div>
+        <div class="card" id="module-empty" hidden>No downloadable materials yet.</div>
+      </section>
+
+      <!-- Assignments -->
+      <section class="page" id="page-assignments" data-title="Assignments" data-sub="Submit your work before the deadline" hidden>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Assignment</th><th>Course</th><th>Due date</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody id="assign-body"></tbody>
+          </table>
+        </div>
+        <div class="card" id="assign-empty" hidden>No assignments for your courses yet.</div>
+      </section>
+
+      <!-- Enrollments -->
+      <section class="page" id="page-enrollments" data-title="Enrollments" data-sub="Add or drop courses for this semester" hidden>
+        <div class="stats">
+          <div class="stat"><small>Status</small><b class="txt ok-text" id="en-status"></b></div>
+          <div class="stat"><small>Year level</small><b class="txt" id="en-year"></b></div>
+          <div class="stat"><small>Program</small><b class="txt" id="en-program"></b></div>
+        </div>
+        <div class="en-banner" id="en-banner" role="status">Checking the enrollment schedule...</div>
+
+        <section class="card" id="en-admin" hidden>
+          <h3 class="en-h">Enrollment schedule (administrators)</h3>
+          <div class="ap-grid">
+            <input type="hidden" id="ap-id">
+            <label>Academic year<select id="ap-year"></select></label>
+            <label>Semester<select id="ap-sem"><option>1st Semester</option><option>2nd Semester</option><option>Summer</option></select></label>
+            <label>Enrollment opens<input type="datetime-local" id="ap-open"></label>
+            <label>Enrollment closes<input type="datetime-local" id="ap-close"></label>
+            <label>Drop deadline (optional)<input type="datetime-local" id="ap-drop"></label>
+            <label class="ap-check"><input type="checkbox" id="ap-active" checked> Period is active</label>
+          </div>
+          <p class="hint">All times are Philippine Time (Asia/Manila). Closing and drop times are inclusive. If no drop deadline is set, dropping ends when enrollment closes.</p>
+          <div class="fieldmsg is-bad" id="ap-msg" role="alert"></div>
+          <div class="ap-actions"><button type="button" class="btn" id="ap-save">Save period</button><button type="button" class="sub-cancel" id="ap-reset">New period</button></div>
+          <div class="tablewrap ap-table"><table><thead><tr><th>Term</th><th>Opens</th><th>Closes</th><th>Drop deadline</th><th>Status</th><th></th></tr></thead><tbody id="ap-body"></tbody></table></div>
+        </section>
+
+        <div class="sec-head"><h2>Course offerings</h2></div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Course</th><th>Units</th><th>Instructor</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody id="enroll-body"></tbody>
+          </table>
+        </div>
+        <div class="card gap" id="enroll-empty" hidden></div>
+
+        <div class="sec-head"><h2>My enrollments</h2></div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Course</th><th>School year</th><th>Enrolled on</th><th>Status</th><th></th></tr>
+            </thead>
+            <tbody id="enrolled-body"></tbody>
+          </table>
+        </div>
+        <div class="card" id="enrolled-empty" hidden>No enrollment records yet.</div>
+      </section>
+
+      <!-- Grades -->
+      <section class="page" id="page-grades" data-title="Grades" data-sub="GPA 1.00 = 97-100, 3.00 = 75 (lowest pass), 5.00 = 74 and below (failed)" hidden>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span>
+            <small>GPA (1.00 best, 5.00 fail)</small><b id="gr-gpa" data-count data-max="5" data-invert>&mdash;</b>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+          <div class="stat">
+            <span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span>
+            <small>Courses graded</small><b id="gr-count" data-count>0</b>
+          </div>
+        </div>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr><th>Course</th><th>Units</th><th>Score</th><th>GPA</th><th>Remarks</th></tr>
+            </thead>
+            <tbody id="grade-body"></tbody>
+          </table>
+        </div>
+        <div class="card" id="grade-empty" hidden>You are not enrolled in any course.</div>
+      </section>
+
+      <!-- Student profile -->
+      <section class="page" id="page-profile" data-title="Student Profile" data-sub="Your personal and academic details" hidden>
+        <div class="pf-layout">
+
+          <!-- Identity column -->
+          <div class="card pf-side pf-fx" role="group" aria-label="Student identity">
+            <div class="pf-banner" aria-hidden="true"><i class="pf-orb o1"></i><i class="pf-orb o2"></i><i class="pf-stars"></i></div>
+            <div class="pf-id-block">
+              <div class="pf-ring"><div class="avatar pf-avatar" id="pf-avatar"></div></div>
+              <h2 id="pf-name"></h2>
+              <p class="pf-sub" id="pf-program-code"></p>
+              <span id="pf-badge" class="pf-badge"></span>
+            </div>
+            <dl class="pf-facts">
+              <div class="pf-copy" data-copy="pf-id" role="button" tabindex="0" title="Click to copy"><dt>Student ID</dt><dd id="pf-id"></dd><svg class="ic pf-copyic" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+              <div class="pf-copy" data-copy="pf-email" role="button" tabindex="0" title="Click to copy"><dt>Email</dt><dd id="pf-email"></dd><svg class="ic pf-copyic" aria-hidden="true"><use href="#i-clipboard"/></svg></div>
+              <div><dt>Year level</dt><dd id="pf-year"></dd></div>
+              <div><dt>Enrollment status</dt><dd id="pf-status"></dd></div>
+            </dl>
+            <div class="pf-side-foot">
+              <svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg>
+              <div><small>Academic program</small><b id="pf-program"></b></div>
+            </div>
+          </div>
+
+          <!-- Main column -->
+          <div class="pf-main">
+
+            <section class="card pf-hero pf-fx" aria-label="Welcome">
+              <div class="pf-hero-txt">
+                <small id="pf-date"></small>
+                <h2 id="pf-greet">Welcome</h2>
+                <p>Here is a quick snapshot of your academic profile.</p>
+              </div>
+              <div class="pf-hero-actions">
+                <button type="button" class="pf-chip" data-goto="courses"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg>Courses</button>
+                <button type="button" class="pf-chip ai" data-ai="open"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg>Ask AI Tutor</button>
+                <button type="button" class="pf-chip" data-goto="assignments"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg>Assignments</button>
+                <button type="button" class="pf-chip" data-goto="grades"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg>Grades</button>
+                <button type="button" class="pf-theme" id="pf-theme" role="switch" aria-checked="false" aria-label="Dark mode">
+                  <span class="pf-theme-track" aria-hidden="true">
+                    <i class="pf-theme-stars"></i>
+                    <span class="pf-theme-knob"><svg class="ic pf-sun"><use href="#i-sun"/></svg><svg class="ic pf-moon"><use href="#i-moon"/></svg></span>
+                  </span>
+                  <span id="pf-theme-label">Light mode</span>
+                </button>
+              </div>
+            </section>
+
+            <div class="pf-stats">
+              <div class="pf-stat pf-fx" data-goto="courses" role="link" tabindex="0"><span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></span><small>Enrolled courses</small><b id="pf-courses">0</b></div>
+              <div class="pf-stat pf-fx" data-goto="courses" role="link" tabindex="0"><span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><small>Total units</small><b id="pf-units">0</b></div>
+              <div class="pf-stat pf-fx" data-goto="assignments" role="link" tabindex="0"><span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span><small>Pending work</small><b id="pf-pending">0</b></div>
+              <div class="pf-stat pf-fx" data-goto="grades" role="link" tabindex="0"><span class="stat-ic"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg></span><small>Current GPA</small><b id="pf-gpa">&mdash;</b></div>
+            </div>
+
+            <section class="card pf-panel" aria-labelledby="pf-h-acad">
+              <h3 id="pf-h-acad">Academic details</h3>
+              <div class="pf-grid">
+                <div class="pf-tile"><span class="ti"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg></span><div><small>Program</small><strong id="pf-program2"></strong></div></div>
+                <div class="pf-tile"><span class="ti"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg></span><div><small>Department</small><strong id="pf-dept"></strong></div></div>
+                <div class="pf-tile"><span class="ti"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg></span><div><small>Program code</small><strong id="pf-code"></strong></div></div>
+                <div class="pf-tile"><span class="ti"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg></span><div><small>School year</small><strong id="pf-sy"></strong></div></div>
+              </div>
+            </section>
+
+            <section class="card pf-panel pf-fill" aria-labelledby="pf-h-courses">
+              <div class="pf-panel-head">
+                <h3 id="pf-h-courses">Current courses</h3>
+                <button type="button" class="textlink" data-goto="courses">View all</button>
+              </div>
+              <ul class="pf-courselist" id="pf-courselist"></ul>
+              <p class="pf-empty" id="pf-courseempty" hidden>You are not enrolled in any course.</p>
+            </section>
+          </div>
+
+        </div>
+      </section>
+
+    </section>
+  </main>
+
+  <!-- Floating quick access -->
+  <div id="quick">
+    <div class="q-panel" id="qpanel" role="menu" aria-label="Quick access" hidden>
+      <b>Quick access</b>
+      <button type="button" role="menuitem" data-qv="courses"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg><span>My Courses</span></button>
+      <button type="button" role="menuitem" data-qv="modules"><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg><span>Learning Modules</span></button>
+      <button type="button" role="menuitem" data-qv="assignments"><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg><span>Pending Assignments</span><em id="q-pending" hidden></em></button>
+      <button type="button" role="menuitem" data-qv="grades"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg><span>Grades</span></button>
+      <button type="button" role="menuitem" data-qv="profile"><svg class="ic" aria-hidden="true"><use href="#i-user"/></svg><span>Student Profile</span></button>
+    </div>
+    <button type="button" class="q-fab" id="qfab" aria-expanded="false" aria-controls="qpanel" aria-haspopup="menu"><svg class="ic" aria-hidden="true"><use href="#i-compass"/></svg><span>Quick access</span></button>
+  </div>
+
+  <!-- AI Tutor -->
+  <button type="button" class="ai-fab" id="aibtn" aria-expanded="false" aria-controls="aipanel"><svg class="ic" aria-hidden="true"><use href="#i-spark"/></svg><span>AI Tutor</span></button>
+  <section class="ai-panel" id="aipanel" role="dialog" aria-label="AI Tutor" hidden>
+    <header class="ai-head">
+      <span class="ai-logo" aria-hidden="true"><svg class="ic"><use href="#i-spark"/></svg></span>
+      <div class="ai-title"><b>AI Tutor</b><small id="ai-status"><i class="ai-dot"></i><span>Checking...</span></small></div>
+      <button type="button" class="ai-new" id="ai-new" title="Start a new chat">New chat</button>
+      <button type="button" class="ai-x" id="ai-close" aria-label="Close AI Tutor"><svg class="ic" aria-hidden="true"><use href="#i-x"/></svg></button>
+    </header>
+    <div class="ai-scope"><label for="ai-course">Focus on</label><select id="ai-course"><option value="">All my courses</option></select></div>
+    <div class="ai-log" id="ai-log" role="log" aria-live="polite"></div>
+    <div class="ai-sugg" id="ai-sugg"></div>
+    <form class="ai-form" id="ai-form" autocomplete="off">
+      <textarea id="ai-input" rows="1" maxlength="1000" placeholder="Ask about a lesson, assignment or grade..." aria-label="Your question"></textarea>
+      <button type="submit" id="ai-send" aria-label="Send"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg></button>
+    </form>
+    <p class="ai-foot">AI can make mistakes. Check important details with your instructor.</p>
+  </section>
+
+  <!-- Login / registration landing page -->
+  <div id="login">
+    <header class="lp-nav" id="lp-nav">
+      <div class="lp-nav-in">
+        <button type="button" class="lp-brand" data-scroll="lp-home" aria-label="Acadaelash, back to top">
+          <span class="logo" aria-hidden="true"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg></span><span><b>Acad<em class="wm">aelash</em></b><small>Learning Management System</small></span>
+        </button>
+        <div class="lp-cta">
+          <button type="button" class="lp-btn ghost" data-auth="signin">Login</button>
+          <button type="button" class="lp-btn solid" data-auth="signup">Sign Up</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="lp-main">
+      <section class="lp-hero" id="lp-home" aria-label="Acadaelash learning portal">
+        <div class="lp-hero-in">
+          <div class="lp-intro">
+            <div class="lp-actions">
+              <button type="button" class="lp-btn solid lg" data-auth="signin">Login to your portal</button>
+            </div>
+            <ul class="lp-points">
+              <li><svg class="ic" aria-hidden="true"><use href="#i-layers"/></svg>Modules and lessons</li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-clipboard"/></svg>Assignments and deadlines</li>
+              <li><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg>Grades and GPA</li>
+            </ul>
+            <div class="lp-art" aria-hidden="true">
+              <div class="art-card a1"><span class="art-ic"><svg class="ic"><use href="#i-layers"/></svg></span><i></i><i class="s"></i></div>
+              <div class="art-card a2">
+                <svg viewBox="0 0 120 120" class="art-ring"><circle class="bg" cx="60" cy="60" r="46"/><circle class="fg" cx="60" cy="60" r="46"/></svg>
+                <i></i><i class="s"></i>
+              </div>
+              <div class="art-card a3"><span class="art-ic"><svg class="ic"><use href="#i-cap"/></svg></span><i></i><i class="s"></i></div>
+            </div>
+          </div>
+
+          <section class="lp-panel" id="lp-panel" aria-label="Account">
+            <div class="lp-panel-head">
+              <span class="logo" aria-hidden="true"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg></span>
+              <div><b>Welcome to Acad<em class="wm">aelash</em></b><small>Sign in or create your portal account</small></div>
+            </div>
+            <div class="lp-tabs" role="tablist" aria-label="Account actions">
+              <button type="button" role="tab" id="tab-signin" aria-selected="true" aria-controls="loginForm" data-tab="signin">Sign in</button>
+              <button type="button" role="tab" id="tab-signup" aria-selected="false" aria-controls="signupForm" tabindex="-1" data-tab="signup">Create account</button>
+            </div>
+        <form id="loginForm" class="auth-card" role="tabpanel" aria-labelledby="tab-signin" novalidate>
+          <div class="auth-brand">
+            <div class="logo" aria-hidden="true"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg></div>
+            <div><b>Acad<em class="wm">aelash</em></b><span>Learning Management System</span></div>
+          </div>
+          <div>
+            <h2>Sign in</h2>
+          </div>
+          <p class="lead">Use your portal account to continue.</p>
+          <div class="field">
+            <label for="lemail">Email address</label>
+            <div class="ifield"><input id="lemail" name="email" type="email" autocomplete="username" required><svg class="fi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="12" cy="7.6" r="4.4"/><path d="M3.8 21.2c0-4.6 3.7-7.8 8.2-7.8s8.2 3.2 8.2 7.8c0 .5-.4.8-.8.8H4.6c-.4 0-.8-.3-.8-.8z"/></svg></div>
+          </div>
+          <div class="field">
+            <label for="lpass">Password</label>
+            <div class="pw">
+              <input id="lpass" name="password" type="password" autocomplete="current-password" required><svg class="fi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 1.8a5 5 0 0 0-5 5v2.7H6.2A2.2 2.2 0 0 0 4 11.7v8.1A2.2 2.2 0 0 0 6.2 22h11.6a2.2 2.2 0 0 0 2.2-2.2v-8.1a2.2 2.2 0 0 0-2.2-2.2H17V6.8a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v2.7H9z"/></svg>
+              <button type="button" class="eye" data-target="lpass" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/><line class="slash" x1="3" y1="3" x2="21" y2="21"/></svg></button>
+            </div>
+          </div>
+          <div class="lp-row"><button type="button" class="lp-forgot" id="lforgot" aria-expanded="false" aria-controls="lforgotnote">Forgot password?</button></div>
+          <div class="fieldmsg is-warn" id="lforgotnote" role="status" hidden>Password reset is not set up in this portal yet. Ask your university administrator to reset your password.</div>
+          <div class="formok" id="lmsg" role="status"></div>
+          <div class="formerr" id="lerr" role="alert"></div>
+          <button class="btn" type="submit">Log in</button>
+          <button class="linkbtn" type="button" id="toSignup">Create an account</button>
+        </form>
+
+        <form id="signupForm" class="auth-card" role="tabpanel" aria-labelledby="tab-signup" hidden novalidate>
+          <div class="auth-brand">
+            <div class="logo" aria-hidden="true"><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg></div>
+            <div><b>Acad<em class="wm">aelash</em></b><span>Learning Management System</span></div>
+          </div>
+          <h2>Create your account</h2>
+          <p class="lead">Register using your university details.</p>
+          <div class="field">
+            <label for="sroletype">Account role</label>
+            <select id="sroletype">
+              <option value="student">Student</option>
+            </select>
+            <p class="hint" id="roleNote" hidden>Only students register here. Administrator accounts are created by an administrator.</p>
+          </div>
+          <div class="two">
+            <div class="field">
+              <label for="sfirst">First name</label>
+              <input id="sfirst" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="slast">Last name</label>
+              <input id="slast" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="semail">Email address</label>
+            <div class="ifield"><input id="semail" type="email" autocomplete="email" required><svg class="fi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><circle cx="12" cy="7.6" r="4.4"/><path d="M3.8 21.2c0-4.6 3.7-7.8 8.2-7.8s8.2 3.2 8.2 7.8c0 .5-.4.8-.8.8H4.6c-.4 0-.8-.3-.8-.8z"/></svg></div>
+          </div>
+          <div class="field" id="sidgroup">
+            <label for="ssid">Student ID</label>
+            <input id="ssid" autocomplete="off" spellcheck="false" aria-describedby="sidmsg">
+            <div class="fieldmsg" id="sidmsg" role="status" aria-live="polite"></div>
+            <button class="linkbtn" type="button" id="sidretry" hidden>Retry verification</button>
+          </div>
+          <div class="field">
+            <label for="spass">Password</label>
+            <div class="pw">
+              <input id="spass" type="password" autocomplete="new-password" required><svg class="fi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 1.8a5 5 0 0 0-5 5v2.7H6.2A2.2 2.2 0 0 0 4 11.7v8.1A2.2 2.2 0 0 0 6.2 22h11.6a2.2 2.2 0 0 0 2.2-2.2v-8.1a2.2 2.2 0 0 0-2.2-2.2H17V6.8a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v2.7H9z"/></svg>
+              <button type="button" class="eye" data-target="spass" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/><line class="slash" x1="3" y1="3" x2="21" y2="21"/></svg></button>
+            </div>
+            <p class="hint" id="pwhint">At least 8 characters. Letters, numbers and @ . - _ # only. No spaces.</p>
+          </div>
+          <div class="field">
+            <label for="spass2">Confirm password</label>
+            <div class="pw">
+              <input id="spass2" type="password" autocomplete="new-password" aria-describedby="pmsg" required><svg class="fi" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 1.8a5 5 0 0 0-5 5v2.7H6.2A2.2 2.2 0 0 0 4 11.7v8.1A2.2 2.2 0 0 0 6.2 22h11.6a2.2 2.2 0 0 0 2.2-2.2v-8.1a2.2 2.2 0 0 0-2.2-2.2H17V6.8a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v2.7H9z"/></svg>
+              <button type="button" class="eye" data-target="spass2" aria-label="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/><line class="slash" x1="3" y1="3" x2="21" y2="21"/></svg></button>
+            </div>
+            <div class="fieldmsg is-bad" id="pmsg" role="alert"></div>
+          </div>
+          <div class="formerr" id="serr" role="alert"></div>
+          <button class="btn" type="submit" id="ssubmit" disabled>Create account</button>
+          <button class="linkbtn" type="button" id="toLogin">Back to log in</button>
+        </form>
+          </section>
+        </div>
+      </section>
+    </div>
+
+    <footer class="lp-foot"><p>&copy; <span id="lp-year"></span> Acadaelash &middot; Learning Management System</p></footer>
+  </div>
+
+  <!-- Centered progress overlay shown while logging in and logging out -->
+  <div id="authwait" class="authwait" role="status" aria-live="polite" aria-busy="true" hidden>
+    <div class="aw-bg" aria-hidden="true">
+      <span class="aw-beam"></span>
+      <svg class="aw-g v" style="--x:8%;--y:18%;--s:40px;--d:0s" viewBox="0 0 24 24" focusable="false"><use href="#i-cap"/></svg>
+      <svg class="aw-g" style="--x:86%;--y:14%;--s:34px;--d:-3s" viewBox="0 0 24 24" focusable="false"><use href="#i-book"/></svg>
+      <svg class="aw-g" style="--x:14%;--y:72%;--s:36px;--d:-6s" viewBox="0 0 24 24" focusable="false"><use href="#i-award"/></svg>
+      <svg class="aw-g v" style="--x:82%;--y:68%;--s:38px;--d:-2s" viewBox="0 0 24 24" focusable="false"><use href="#i-clipboard"/></svg>
+      <svg class="aw-g" style="--x:30%;--y:86%;--s:30px;--d:-5s" viewBox="0 0 24 24" focusable="false"><use href="#i-layers"/></svg>
+      <svg class="aw-g v" style="--x:68%;--y:10%;--s:28px;--d:-8s" viewBox="0 0 24 24" focusable="false"><use href="#i-spark"/></svg>
+      <svg class="aw-g" style="--x:92%;--y:42%;--s:30px;--d:-4s" viewBox="0 0 24 24" focusable="false"><use href="#i-compass"/></svg>
+      <svg class="aw-g v" style="--x:4%;--y:46%;--s:28px;--d:-7s" viewBox="0 0 24 24" focusable="false"><use href="#i-book"/></svg>
+      <i class="aw-p" style="--x:6%;--s:3px;--d:0s;--t:11s;--dx:30px"></i>
+      <i class="aw-p" style="--x:14%;--s:2px;--d:-4s;--t:13s;--dx:-20px"></i>
+      <i class="aw-p" style="--x:22%;--s:4px;--d:-8s;--t:10s;--dx:25px"></i>
+      <i class="aw-p" style="--x:31%;--s:2px;--d:-2s;--t:14s;--dx:-30px"></i>
+      <i class="aw-p" style="--x:39%;--s:3px;--d:-6s;--t:12s;--dx:20px"></i>
+      <i class="aw-p" style="--x:47%;--s:2px;--d:-10s;--t:15s;--dx:-15px"></i>
+      <i class="aw-p" style="--x:55%;--s:4px;--d:-3s;--t:11s;--dx:35px"></i>
+      <i class="aw-p" style="--x:63%;--s:2px;--d:-7s;--t:13s;--dx:-25px"></i>
+      <i class="aw-p" style="--x:71%;--s:3px;--d:-1s;--t:10s;--dx:18px"></i>
+      <i class="aw-p" style="--x:79%;--s:2px;--d:-9s;--t:14s;--dx:-22px"></i>
+      <i class="aw-p" style="--x:86%;--s:4px;--d:-5s;--t:12s;--dx:28px"></i>
+      <i class="aw-p" style="--x:93%;--s:2px;--d:-11s;--t:15s;--dx:-18px"></i>
+      <i class="aw-p" style="--x:18%;--s:2px;--d:-12s;--t:16s;--dx:12px"></i>
+      <i class="aw-p" style="--x:52%;--s:3px;--d:-13s;--t:12s;--dx:-10px"></i>
+    </div>
+    <div class="aw-card">
+      <div class="aw-spin" aria-hidden="true">
+        <span class="aw-glow"></span>
+        <svg class="aw-ring aw-orbit" viewBox="0 0 100 100" focusable="false"><circle cx="50" cy="50" r="49"/></svg>
+        <svg class="aw-ring" viewBox="0 0 100 100" focusable="false"><circle class="aw-track" cx="50" cy="50" r="44"/></svg>
+        <span class="aw-comet"></span>
+        <svg class="mark" viewBox="0 0 48 48" focusable="false"><use href="#i-logo"/></svg>
+      </div>
+      <p class="aw-text"><span id="aw-text">Logging in</span><span class="aw-dots" aria-hidden="true"><i></i><i></i><i></i></span></p>
+      <p class="aw-sub" id="aw-sub" aria-hidden="true">Verifying your credentials</p>
+      <div class="aw-bar" aria-hidden="true"><i></i></div>
+    </div>
+  </div>
+
+  <!-- Welcome transition shown right after a successful log in -->
+  <div id="welcome" hidden aria-hidden="true">
+    <div class="w-rings"></div>
+    <div class="w-stage">
+      <div class="w-crest"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46"/></svg><span><svg class="mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><use href="#i-logo"/></svg></span></div>
+      <p class="w-hello">Welcome back</p>
+      <h2 class="w-name" id="w-name"></h2>
+      <div class="w-line"><i></i></div>
+      <p class="w-note">Preparing your dashboard</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="config.js"></script>
+  <script>
+const $ = id => document.getElementById(id);
+
+if (typeof supabase === 'undefined') {
+  $('lerr').textContent = 'The Supabase library did not load. Check your internet connection and reload.';
+  throw new Error('Supabase library missing');
+}
+
+if (!window.APP_CONFIG || !window.APP_CONFIG.SUPABASE_URL || !window.APP_CONFIG.SUPABASE_KEY) {
+  $('lerr').textContent = 'config.js is missing or empty. Start the portal with run.bat (it creates config.js from .env), then reload.';
+  throw new Error('window.APP_CONFIG is not defined: config.js did not load');
+}
+
+const SUPABASE_URL = window.APP_CONFIG.SUPABASE_URL;
+const SUPABASE_KEY = window.APP_CONFIG.SUPABASE_KEY;
+let sb;
+try {
+  sb = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+} catch (err) {
+  $('lerr').textContent = 'Check SUPABASE_URL and SUPABASE_KEY in config.js. ' + err.message;
+  throw err;
+}
+
+const db = {
+  programs: [], student_profiles: [], subjects: [], courses: [],
+  enrollment_data: [], grades_data: [], modules: [], assignments: [],
+  submissions: [], announcements: [], mySections: []
+};
+
+async function loadData() {
+  const tables = ['programs', 'student_profiles', 'subjects', 'courses', 'enrollment_data', 'grades_data', 'modules', 'assignments'];
+  const results = await Promise.all(tables.map(t => sb.from(t).select('*')));
+  results.forEach((r, i) => {
+    if (r.error) throw new Error(tables[i] + ': ' + r.error.message);
+    db[tables[i]] = r.data;
+  });
+  try {   // announcements are optional: the portal still opens if the table is not set up yet
+    const an = await sb.from('announcements').select('*').eq('published', true).order('created_at', {ascending: false}).limit(5);
+    db.announcements = an.error ? [] : an.data;
+  } catch (e) { db.announcements = []; }
+  db.grades_data.forEach(g => g.score = Number(g.score));
+  db.courses.forEach(c => c.units = Number(c.units));
+  db.subjects.forEach(s => s.units = Number(s.units));
+}
+
+function sha256Sync(text) {
+  const rotr = (x, n) => (x >>> n) | (x << (32 - n));
+  const frac = x => Math.floor((x - Math.floor(x)) * 4294967296);
+  const primes = [];
+  for (let n = 2; primes.length < 64; n++) if (primes.every(p => n % p)) primes.push(n);
+  const K = primes.map(p => frac(Math.cbrt(p)));
+  let H = primes.slice(0, 8).map(p => frac(Math.sqrt(p)));
+  const bytes = new TextEncoder().encode(text);
+  const len = bytes.length;
+  const padded = new Uint8Array(((len + 9 + 63) >> 6) << 6);
+  padded.set(bytes);
+  padded[len] = 0x80;
+  const view = new DataView(padded.buffer);
+  view.setUint32(padded.length - 8, Math.floor(len * 8 / 4294967296));
+  view.setUint32(padded.length - 4, (len * 8) >>> 0);
+  const w = new Array(64);
+  for (let i = 0; i < padded.length; i += 64) {
+    for (let t = 0; t < 16; t++) w[t] = view.getUint32(i + t * 4);
+    for (let t = 16; t < 64; t++) {
+      const s0 = rotr(w[t - 15], 7) ^ rotr(w[t - 15], 18) ^ (w[t - 15] >>> 3);
+      const s1 = rotr(w[t - 2], 17) ^ rotr(w[t - 2], 19) ^ (w[t - 2] >>> 10);
+      w[t] = (w[t - 16] + s0 + w[t - 7] + s1) | 0;
+    }
+    let [a, b, c, d, e, f, g, h] = H;
+    for (let t = 0; t < 64; t++) {
+      const t1 = (h + (rotr(e, 6) ^ rotr(e, 11) ^ rotr(e, 25)) + ((e & f) ^ (~e & g)) + K[t] + w[t]) | 0;
+      const t2 = ((rotr(a, 2) ^ rotr(a, 13) ^ rotr(a, 22)) + ((a & b) ^ (a & c) ^ (b & c))) | 0;
+      h = g; g = f; f = e; e = (d + t1) | 0; d = c; c = b; b = a; a = (t1 + t2) | 0;
+    }
+    H = [H[0] + a | 0, H[1] + b | 0, H[2] + c | 0, H[3] + d | 0, H[4] + e | 0, H[5] + f | 0, H[6] + g | 0, H[7] + h | 0];
+  }
+  return H.map(x => (x >>> 0).toString(16).padStart(8, '0')).join('');
+}
+
+async function sha256(text) {
+  if (window.crypto && crypto.subtle) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+    return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+  return sha256Sync(text);
+}
+
+const hashPassword = (email, password) => sha256(email.trim().toLowerCase() + ':' + password);
+
+// Rules for new passwords and email addresses: letters a-z, digits 0-9 and these symbols only: @ . - _ #
+// No spaces and no other symbols or accented letters. (The login form uses the same filter.)
+const CHARS_BAD = /[^A-Za-z0-9@._#-]/, CHARS_BAD_ALL = /[^A-Za-z0-9@._#-]/g;
+const RULE_TEXT = 'Use only letters a to z, numbers 0 to 9 and these symbols: @ . - _ #';
+const PW_HINT = 'At least 8 characters. Letters, numbers and @ . - _ # only. No spaces.';
+const pwProblem = p => {
+  p = String(p == null ? '' : p);
+  if (/\s/.test(p)) return 'Passwords cannot contain spaces.';
+  if (CHARS_BAD.test(p)) return RULE_TEXT + '. Other symbols and accented letters are not allowed in passwords.';
+  if (p.length < 8) return 'Password must be at least 8 characters.';
+  return '';
+};
+const emailProblem = e => {
+  e = String(e == null ? '' : e).trim();
+  if (/\s/.test(e)) return 'Email addresses cannot contain spaces.';
+  if (CHARS_BAD.test(e)) return 'Email addresses may only use letters a to z, numbers 0 to 9 and these symbols: @ . - _ #';
+  if (!/^[^@]+@[^@]+\.[^@]+$/.test(e)) return 'Enter a valid email address.';
+  return '';
+};
+const cleanInput = el => { const v = el.value.replace(CHARS_BAD_ALL, ''); if (v === el.value) return false; el.value = v; return true; };
+const allowedRoles = ['student', 'admin'];
+
+// GPA scale: 1.00 is best, 3.00 is the lowest pass (score 75), 5.00 is a fail (74 and below).
+// Thresholds use >=, so a decimal score such as 96.5 falls in the 94-96 band and 74.5 fails.
+const GPA_SCALE = [[97, 1], [94, 1.25], [91, 1.5], [88, 1.75], [85, 2], [82, 2.25], [79, 2.5], [76, 2.75], [75, 3]];
+const toGPA = p => {
+  const hit = GPA_SCALE.find(([min]) => p >= min);
+  const points = hit ? hit[1] : 5;
+  return {points, text: points.toFixed(2), passed: !!hit, status: hit ? 'Passed' : 'Failed'};
+};
+const subj = id => db.subjects.find(s => s.subject_id === id);
+const code = id => (subj(id) || {}).subject_code || '';
+
+let me = null, cur = 'dashboard', role = 'student';
+const stu = () => db.student_profiles.find(s => s.student_id === me);
+const prog = () => db.programs.find(p => p.program_code === stu().program) || {program_id: 0, program_name: stu().program, department: '-'};
+const fmtDate = d => new Date(d).toLocaleDateString('en-PH', {month: 'short', day: 'numeric', year: 'numeric'});
+const badgeClass = {Submitted: 'ok', Passed: 'ok', Enrolled: 'ok', Pending: 'warn', 'Not Enrolled': 'warn', Late: 'bad', Overdue: 'bad', Dropped: 'bad', Failed: 'bad'};
+const badge = s => `<span class="badge ${badgeClass[s] || ''}">${s}</span>`;
+const btn = (act, label) => `<button class="dl" data-act="${act}">${label}</button>`;
+const dash = '&mdash;';
+
+function fillTable(bodyId, emptyId, rows) {
+  const body = $(bodyId);
+  body.innerHTML = rows.map(r => `<tr>${r.map(c => `<td>${c}</td>`).join('')}</tr>`).join('');
+  body.closest('.tablewrap').hidden = rows.length === 0;
+  $(emptyId).hidden = rows.length > 0;
+}
+
+const reviewHtml = s => (s.score != null ? '<b>Score: ' + Number(s.score) + '</b>' : 'Reviewed') + (s.feedback ? '<br><small>' + String(s.feedback).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c])) + '</small>' : '');
+const currentSY = () => db.courses.map(c => c.school_year).sort().pop();
+const myEnrollments = () => db.enrollment_data.filter(e => e.student_id === me);
+const active = () => myEnrollments().filter(e => e.enrollment_status === 'Enrolled').map(e => ({e, c: db.courses.find(c => c.course_code === e.course_code)})).filter(x => x.c);
+const gradeOf = e => db.grades_data.find(g => g.enrollment_id === e.enrollment_id);
+const units = () => active().reduce((s, {c}) => s + c.units, 0);
+
+function gpa() {
+  let q = 0, u = 0;
+  active().forEach(({e, c}) => {
+    const g = gradeOf(e);
+    if (g) { q += toGPA(g.score).points * c.units; u += c.units; }
+  });
+  return u ? q / u : null;
+}
+
+function myWork() {
+  const out = [];
+  active().forEach(({c}) => db.assignments.filter(a => a.subject_id === c.subject_id).forEach(a =>
+    out.push({c, a, sub: db.submissions.find(s => s.assignment_id === a.assignment_id && s.student_id === me)})));
+  return out.sort((x, y) => new Date(x.a.due_date) - new Date(y.a.due_date));
+}
+
+const pendingList = () => myWork().filter(w => !w.sub).map(w => ({title: w.a.title, course: code(w.c.subject_id), due: w.a.due_date}));
+
+// Assignment submissions are saved by the database (see phase4_submissions_announcements.sql).
+async function saveSubmission(a, text) {
+  let cred = null;
+  try { cred = JSON.parse(sessionStorage.getItem('cred')); } catch (e) { /* ignore */ }
+  if (!cred) { alert('Please log out and log in again to continue.'); return false; }
+  const {data, error} = await sb.rpc('submit_assignment', {p_email: cred.email, p_hash: cred.hash, p_assignment: a.assignment_id, p_content: text});
+  if (error) {
+    alert(error.code === 'P0001' ? error.message : error.code === 'PGRST202' ? 'Submissions are not set up yet. Run phase4_submissions_announcements.sql in Supabase.' : 'Could not submit. Please try again.');
+    return false;
+  }
+  db.submissions = db.submissions.filter(x => !(x.assignment_id === a.assignment_id && x.student_id === me));
+  db.submissions.push(data);
+  return true;
+}
+async function loadMySchedule() {
+  db.mySections = [];
+  if (role !== 'student') return;
+  try {
+    const cred = JSON.parse(sessionStorage.getItem('cred'));
+    const {data} = await sb.rpc('get_my_sections', {p_email: cred.email, p_hash: cred.hash});
+    if (Array.isArray(data)) db.mySections = data;
+  } catch (e) { /* the portal works without a schedule */ }
+}
+async function loadMySubmissions() {
+  db.submissions = [];
+  if (role !== 'student') return;
+  try {
+    const cred = JSON.parse(sessionStorage.getItem('cred'));
+    const {data} = await sb.rpc('get_my_submissions', {p_email: cred.email, p_hash: cred.hash});
+    if (Array.isArray(data)) db.submissions = data;
+  } catch (e) { /* the portal still works without saved submissions */ }
+}
+
+// Enrollment and dropping are decided by the database functions (see enrollment_setup.sql).
+async function setEnroll(courseCode, status) {
+  let cred = null;
+  try { cred = JSON.parse(sessionStorage.getItem('cred')); } catch (e) { /* ignore */ }
+  if (!cred) { alert('Please log out and log in again to continue.'); return false; }
+  const {data, error} = await sb.rpc(status === 'Enrolled' ? 'enroll_course' : 'drop_course', {p_email: cred.email, p_hash: cred.hash, p_course_code: courseCode});
+  if (error) {
+    alert(error.code === 'P0001' ? error.message : error.code === 'PGRST202' ? 'Enrollment is not set up yet. Run enrollment_setup.sql in Supabase.' : 'Could not complete the request. Please try again.');
+    return false;
+  }
+  const row = db.enrollment_data.find(x => x.enrollment_id === data.enrollment_id);
+  if (row) Object.assign(row, data); else db.enrollment_data.push(data);
+  return true;
+}
+
+const renderers = {
+  dashboard() {
+    const g = gpa(), p = pendingList();
+    $('st-courses').textContent = active().length;
+    $('st-units').textContent = units();
+    $('st-pending').textContent = p.length;
+    $('st-gpa').innerHTML = g == null ? dash : g.toFixed(2);
+    fillTable('dash-body', 'dash-empty', p.map(a => [`<b>${a.title}</b>`, a.course, fmtDate(a.due)]));
+  },
+
+  courses() {
+    fillTable('courses-body', 'courses-empty', active().map(({c}) =>
+      [`<b>${code(c.subject_id)}</b>`, c.course_name, c.department, c.units, c.instructor, c.school_year]));
+    $('curr-title').textContent = prog().program_name + ' curriculum';
+    fillTable('curr-body', 'curr-empty', db.subjects.filter(s => s.program_id === prog().program_id).map(s =>
+      [`<b>${s.subject_code}</b>`, s.subject_name, s.units, s.year_level, s.semester]));
+  },
+
+  modules() {
+    const sids = db.subjects.filter(s => s.program_id === prog().program_id).map(s => s.subject_id);
+    const list = db.modules.filter(m => sids.includes(m.subject_id)).sort((a, b) => a.subject_id - b.subject_id || a.module_no - b.module_no);
+    $('module-list').innerHTML = list.map(m => `<div class="card item"><div><b>Module ${m.module_no}: ${m.title}</b><p>${code(m.subject_id)} &bull; ${m.description || ''}</p><p>Uploaded ${fmtDate(m.date_uploaded)}</p></div><a class="dl" href=".${m.file_path}" download>Download</a></div>`).join('');
+    $('module-list').hidden = list.length === 0;
+    $('module-empty').hidden = list.length > 0;
+  },
+
+  assignments() {
+    fillTable('assign-body', 'assign-empty', myWork().map(({c, a, sub}) => [
+      `<b>${a.title}</b>`,
+      code(c.subject_id),
+      fmtDate(a.due_date),
+      sub ? badge(sub.late ? 'Late' : 'Submitted') : badge(new Date(a.due_date) < new Date() ? 'Overdue' : 'Pending'),
+      sub ? (sub.score != null || sub.feedback ? reviewHtml(sub) : 'Awaiting grade') : btn(`submit|${a.assignment_id}`, 'Submit')
+    ]));
+  },
+
+  enrollments() {
+    const s = stu();
+    $('en-status').textContent = s.enrollment_status;
+    $('en-year').textContent = s.year_level;
+    $('en-program').textContent = s.program;
+    enrollView();
+  },
+
+  grades() {
+    const g = gpa();
+    let graded = 0;
+    const rows = active().map(({e, c}) => {
+      const gr = gradeOf(e);
+      if (gr) graded++;
+      return [
+        `<b>${code(c.subject_id)}</b> ${c.course_name}`,
+        c.units,
+        gr ? gr.score.toFixed(2) : dash,
+        gr ? `<b>${toGPA(gr.score).text}</b>` : dash,
+        gr ? badge(toGPA(gr.score).status) : 'Not graded'
+      ];
+    });
+    $('gr-gpa').innerHTML = g == null ? dash : g.toFixed(2);
+    $('gr-count').textContent = graded;
+    fillTable('grade-body', 'grade-empty', rows);
+  },
+
+  profile() {
+    const s = stu(), pr = prog(), g = gpa(), act = active();
+    const full = s.first_name + ' ' + s.last_name;
+    const count = (id, v, d) => (window.pfCountTo ? window.pfCountTo($(id), v, d) : ($(id).textContent = v.toFixed(d)));
+    const hr = new Date().getHours();
+    $('pf-greet').textContent = (hr < 12 ? 'Good morning' : hr < 18 ? 'Good afternoon' : 'Good evening') + ', ' + s.first_name;
+    $('pf-date').textContent = new Date().toLocaleDateString(undefined, {weekday: 'long', month: 'long', day: 'numeric'});
+    $('pf-avatar').textContent = s.first_name[0] + s.last_name[0];
+    $('pf-name').textContent = full;
+    $('pf-id').textContent = s.student_id;
+    $('pf-email').textContent = s.email;
+    $('pf-program').textContent = pr.program_name + ' (' + s.program + ')';
+    $('pf-program2').textContent = pr.program_name;
+    $('pf-program-code').textContent = s.program + ' \u00b7 ' + s.year_level;
+    $('pf-code').textContent = s.program;
+    $('pf-dept').textContent = pr.department;
+    $('pf-year').textContent = s.year_level;
+    $('pf-status').textContent = s.enrollment_status;
+    $('pf-badge').innerHTML = badge(s.enrollment_status);
+    $('pf-sy').textContent = currentSY() || '-';
+    count('pf-courses', act.length, 0);
+    count('pf-units', Number(units()) || 0, 0);
+    count('pf-pending', pendingList().length, 0);
+    if (g == null) { delete $('pf-gpa').dataset.to; $('pf-gpa').innerHTML = dash; } else count('pf-gpa', g, 2);
+    $('pf-courselist').innerHTML = act.map(({e, c}) => {
+      const gr = gradeOf(e);
+      return `<li data-goto="courses" role="link" tabindex="0"><span class="pf-cc">${code(c.subject_id)}</span><div><b>${c.course_name}</b><small>${c.instructor || ''} &bull; ${c.units} units</small></div><em>${gr ? toGPA(gr.score).text : 'Not graded'}</em><svg class="ic pf-go" aria-hidden="true"><use href="#i-arrow"/></svg></li>`;
+    }).join('');
+    $('pf-courselist').hidden = act.length === 0;
+    $('pf-courseempty').hidden = act.length > 0;
+  }
+};
+
+function show(id) {
+  cur = id;
+  document.querySelectorAll('.page').forEach(p => p.hidden = p.id !== 'page-' + id);
+  const page = $('page-' + id);
+  $('title').textContent = page.dataset.title;
+  $('sub').textContent = page.dataset.sub;
+  renderers[id]();
+  document.querySelectorAll('#nav button').forEach(b => b.classList.toggle('on', b.dataset.view === id));
+  history.replaceState(null, '', window.keepHash && location.hash.startsWith('#' + id + '/') ? location.hash : '#' + id);
+}
+
+const startPage = () => { const v = location.hash.slice(1).split('/')[0]; return renderers[v] ? v : 'dashboard'; };
+
+$('nav').addEventListener('click', e => {
+  const b = e.target.closest('button');
+  if (b) show(b.dataset.view);
+});
+
+$('view').addEventListener('click', async ev => {
+  const b = ev.target.closest('button[data-act]');
+  if (!b) return;
+  const [act, x] = b.dataset.act.split('|');
+  if (!['submit', 'enroll', 'drop'].includes(act)) return; // other views own their own data-act buttons; never fall through to show(cur)
+  if (act === 'submit' && role !== 'student') { alert('Only students can submit assignments.'); return; }
+  if (act === 'enroll' || act === 'drop') {
+    if (role !== 'student') { alert('Only students can enroll in or drop courses.'); return; }
+    if (act === 'drop' && !confirm('Drop this course?')) return;
+    b.disabled = true; // blocks repeated clicks while the server decides
+    const ok = await setEnroll(+x, act === 'enroll' ? 'Enrolled' : 'Dropped');
+    if (!ok) { b.disabled = false; show(cur); return; }
+    alert(act === 'enroll' ? 'You are now enrolled in this course.' : 'The course has been dropped.');
+  } else if (act === 'submit') {
+    const a = db.assignments.find(a => a.assignment_id === +x);
+    const text = await askSubmission(a);
+    if (text === null) return;
+    if (!text.trim()) { alert('Submission cannot be empty.'); return; }
+    b.disabled = true;
+    if (!await saveSubmission(a, text)) { b.disabled = false; show(cur); return; }
+  }
+  show(cur);
+});
+
+function enter(acct) {
+  role = acct.role;
+  if (role === 'admin' && !acct.classic && window.AdminPanel) {   // admins get their own panel
+    sessionStorage.setItem('acct', JSON.stringify(acct));
+    document.body.classList.remove('locked');
+    window.AdminPanel.open(acct);
+    return;
+  }
+  me = (role === 'student' ? db.student_profiles.find(s => String(s.student_id) === String(acct.student_id)) : db.student_profiles[0] || {}).student_id;
+  if (me == null || !stu()) {
+    $('lerr').textContent = 'No student record was found for this account.';
+    return;
+  }
+  sessionStorage.setItem('acct', JSON.stringify(acct));
+  document.body.classList.remove('locked');
+  $('uname').textContent = acct.full_name + (role === 'student' ? '' : ' (' + role + ')');
+  $('viewbox').hidden = role === 'student';
+  if (role !== 'student') {
+    $('viewas').innerHTML = db.student_profiles.map(s => `<option value="${s.student_id}">${s.first_name} ${s.last_name}</option>`).join('');
+    $('viewas').value = me;
+  }
+  Promise.all([loadMySubmissions(), loadMySchedule()]).then(() => show(startPage()));
+}
+
+$('viewas').onchange = () => {
+  const s = db.student_profiles.find(s => String(s.student_id) === $('viewas').value);
+  if (s) { me = s.student_id; show(cur); }
+};
+
+/* Always leave the login form empty (email + password, show-password toggle back to hidden). */
+function clearLoginFields() {
+  $('loginForm').reset();
+  document.querySelectorAll('#loginForm .eye').forEach(resetEye);
+}
+
+function showLogin() {
+  $('signupForm').hidden = true;
+  $('loginForm').hidden = false;
+  $('serr').textContent = '';
+  clearLoginFields();
+}
+
+function showSignup() {
+  $('loginForm').hidden = true;
+  $('signupForm').hidden = false;
+  $('lerr').textContent = '';
+  $('lmsg').textContent = '';
+}
+
+$('toSignup').onclick = showSignup;
+$('toLogin').onclick = showLogin;
+
+function resetEye(btn) {
+  $(btn.dataset.target).type = 'password';
+  btn.classList.remove('on');
+  btn.setAttribute('aria-pressed', 'false');
+  btn.setAttribute('aria-label', 'Show password');
+}
+
+document.querySelectorAll('.eye').forEach(btn => btn.addEventListener('click', () => {
+  const input = $(btn.dataset.target);
+  const show = input.type === 'password';
+  input.type = show ? 'text' : 'password';
+  btn.classList.toggle('on', show);
+  btn.setAttribute('aria-pressed', String(show));
+  btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+}));
+
+const sidText = {
+  ok: ['ok', 'Student ID verified. You may continue with registration.'],
+  invalid: ['bad', 'Invalid Student ID. Please enter the Student ID assigned by your university.'],
+  ineligible: ['bad', 'This Student ID is not currently eligible for registration. Please contact your university administrator.'],
+  exists: ['bad', 'An account already exists for this Student ID. Please log in instead.']
+};
+let sidStatus = '', sidToken = 0, sidTimer = null;
+
+function setSid(kind, text) {
+  $('sidmsg').className = 'fieldmsg' + (kind ? ' is-' + kind : '');
+  $('sidmsg').textContent = text;
+}
+
+function passwordsMismatch() {
+  return $('spass2').value.length > 0 && $('spass').value !== $('spass2').value;
+}
+
+function updateSubmit() {
+  const student = $('sroletype').value === 'student';
+  $('ssubmit').disabled = passwordsMismatch() || (student && sidStatus !== 'ok');
+}
+
+function checkPasswords() {
+  const bad = passwordsMismatch();
+  $('pmsg').textContent = bad ? 'Passwords do not match. Please check your password.' : '';
+  $('spass2').classList.toggle('invalid', bad);
+  $('spass2').setAttribute('aria-invalid', String(bad));
+  updateSubmit();
+  return !bad;
+}
+
+async function checkStudentId() {
+  const id = $('ssid').value.trim();
+  const token = ++sidToken;
+  $('sidretry').hidden = true;
+  if (!id) { sidStatus = ''; setSid('', ''); updateSubmit(); return; }
+  sidStatus = 'checking';
+  setSid('info', 'Checking Student ID...');
+  updateSubmit();
+  try {
+    const {data, error} = await sb.rpc('verify_student_id', {p_student_id: id});
+    if (token !== sidToken) return;
+    if (error || !sidText[data]) throw error || new Error('Unexpected response');
+    sidStatus = data;
+    setSid(sidText[data][0], sidText[data][1]);
+  } catch (ex) {
+    if (token !== sidToken) return;
+    console.error(ex);
+    sidStatus = 'error';
+    setSid('warn', 'Could not verify the Student ID right now. Please try again.');
+    $('sidretry').hidden = false;
+  }
+  updateSubmit();
+}
+
+$('ssid').addEventListener('input', () => {
+  sidToken++;
+  sidStatus = '';
+  setSid('', '');
+  $('sidretry').hidden = true;
+  updateSubmit();
+  clearTimeout(sidTimer);
+  sidTimer = setTimeout(checkStudentId, 500);
+});
+$('sidretry').onclick = checkStudentId;
+$('spass').addEventListener('input', checkPasswords);
+$('spass2').addEventListener('input', checkPasswords);
+
+// Remove disallowed characters (including spaces) while typing or pasting in the sign-up form.
+['spass', 'spass2'].forEach(id => {
+  $(id).addEventListener('input', e => {
+    const note = $('pwhint');
+    if (cleanInput(e.target)) { note.textContent = 'That character is not allowed. ' + RULE_TEXT + '. No spaces.'; note.style.color = '#a83242'; }
+    else if (id === 'spass') { note.textContent = PW_HINT; note.style.color = ''; }
+  }, true);
+  $(id).addEventListener('keydown', e => { if (e.key === ' ') e.preventDefault(); });
+});
+$('semail').addEventListener('input', e => cleanInput(e.target), true);
+$('semail').addEventListener('keydown', e => { if (e.key === ' ') e.preventDefault(); });
+
+// Same character rules on the login form: no spaces, only letters, numbers and @ . - _ #
+['lemail', 'lpass'].forEach(id => {
+  $(id).addEventListener('input', e => cleanInput(e.target), true);
+  $(id).addEventListener('keydown', e => { if (e.key === ' ') e.preventDefault(); });
+});
+
+$('sroletype').onchange = () => {
+  const student = $('sroletype').value === 'student';
+  $('sidgroup').hidden = !student;
+  $('roleNote').hidden = student;
+  updateSubmit();
+};
+
+$('signupForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  const err = $('serr');
+  err.textContent = '';
+  const r = $('sroletype').value;
+  if (!allowedRoles.includes(r)) {
+    err.textContent = 'Not authorized. Only students can create an account here.';
+    return;
+  }
+  const first = $('sfirst').value.trim(), last = $('slast').value.trim();
+  const email = $('semail').value.trim().toLowerCase();
+  const sid = $('ssid').value.trim();
+  const p1 = $('spass').value;
+  if (!first || !last || !email) { err.textContent = 'Enter your first name, last name and email address.'; return; }
+  if (r === 'student' && !sid) { err.textContent = 'Enter your Student ID.'; return; }
+  const badEmail = emailProblem(email);
+  if (badEmail) { err.textContent = badEmail; return; }
+  const badPass = pwProblem(p1);
+  if (badPass) { err.textContent = badPass; return; }
+  if (p1.length < 8) { err.textContent = 'Password must be at least 8 characters.'; return; }
+  if (!checkPasswords() || p1 !== $('spass2').value) {
+    $('pmsg').textContent = 'Passwords do not match. Please check your password.';
+    $('spass2').focus();
+    return;
+  }
+  const submit = $('ssubmit');
+  submit.disabled = true;
+  submit.textContent = 'Creating account...';
+  try {
+    const {error} = await sb.rpc('signup_account', {
+      p_role: r,
+      p_first: first,
+      p_last: last,
+      p_email: email,
+      p_student_id: r === 'student' ? sid : null,
+      p_hash: await hashPassword(email, p1)
+    });
+    if (error) {
+      err.textContent = error.code === 'P0001' ? error.message
+        : error.code === 'PGRST202' ? 'Registration is not set up yet. Run auth_setup.sql in Supabase, then reload this page.'
+        : 'Could not complete registration right now. Please try again.';
+      return;
+    }
+    $('signupForm').reset();
+    document.querySelectorAll('.eye').forEach(resetEye);
+    sidStatus = '';
+    setSid('', '');
+    $('pmsg').textContent = '';
+    $('sidgroup').hidden = false;
+    $('roleNote').hidden = true;
+    showLogin();
+    $('lmsg').textContent = 'Account created. You can log in now.';
+  } catch (ex) {
+    console.error(ex);
+    err.textContent = 'Something went wrong: ' + ex.message;
+  } finally {
+    submit.textContent = 'Create account';
+    updateSubmit();
+  }
+});
+
+$('loginForm').addEventListener('submit', async e => {
+  e.preventDefault();
+  $('lerr').textContent = '';
+  $('lmsg').textContent = '';
+  const email = $('lemail').value.trim().toLowerCase();
+  try {
+    const hash = await hashPassword(email, $('lpass').value);
+    clearLoginFields(); // credentials now live only in local variables for this request
+    const {data, error} = await sb.rpc('login_account', {p_email: email, p_hash: hash});
+    if (error) { $('lerr').textContent = error.message; return; }
+    if (!data) { $('lerr').textContent = 'Wrong email or password.'; return; }
+    sessionStorage.setItem('cred', JSON.stringify({email, hash}));
+    enter(data);
+  } catch (ex) {
+    console.error(ex);
+    $('lerr').textContent = 'Something went wrong: ' + ex.message;
+  } finally {
+    clearLoginFields(); // covers every outcome: wrong password, server error, success
+  }
+});
+
+/* Blank on first load, reload, and when restored from the back/forward cache
+   (pageshow fires on both a normal load and a bfcache restore). */
+clearLoginFields();
+window.addEventListener('pageshow', clearLoginFields);
+
+$('logout').onclick = () => {
+  sessionStorage.removeItem('acct');
+  sessionStorage.removeItem('cred');
+  me = null;
+  clearLoginFields();
+  document.body.classList.add('locked');
+};
+
+(async () => {
+  $('lerr').textContent = 'Loading data...';
+  try {
+    await loadData();
+    $('lerr').textContent = '';
+  } catch (err) {
+    console.error(err);
+    $('lerr').textContent = 'Could not load data from Supabase. ' + err.message;
+    return;
+  }
+  try {
+    const saved = JSON.parse(sessionStorage.getItem('acct'));
+    if (saved && allowedRoles.includes(saved.role)) enter(saved);
+  } catch (err) {
+    sessionStorage.removeItem('acct');
+  }
+})();
+
+</script>
+  <script>
+/* Acadaelash portal: visual enhancements only.
+   Loaded after script.js. It never writes data, never calls Supabase and
+   never changes script.js behaviour; it only reads what script.js already
+   rendered (plus read-only helpers such as stu(), active(), myWork()). */
+(() => {
+  'use strict';
+
+  const $ = id => document.getElementById(id);
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+  const safe = fn => { try { return fn(); } catch (e) { return undefined; } };
+  const icon = n => `<svg class="ic" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+  const initials = t => {
+    const w = String(t || '').replace(/\(.*?\)/g, '').trim().split(/\s+/).filter(Boolean);
+    return ((w[0] || '')[0] || '') + (w.length > 1 ? w[w.length - 1][0] : '');
+  };
+
+  const body = document.body;
+  const introQueue = [];
+  const afterIntro = fn => body.classList.contains('intro') ? introQueue.push(fn) : fn();
+
+  /* Welcome transition after log in (created first so it runs before the
+     other observers and everything else can wait for it) ------------------ */
+  const welcome = $('welcome');
+  let introTimer = 0, wasLocked = body.classList.contains('locked');
+
+  function endIntro() {
+    if (!body.classList.contains('intro')) return;
+    clearTimeout(introTimer);
+    welcome.classList.add('leave');
+    setTimeout(() => {
+      welcome.hidden = true;
+      welcome.classList.remove('go', 'leave');
+      body.classList.remove('intro');
+      introQueue.splice(0).forEach(f => safe(f));
+      placePill();
+    }, 700);
+  }
+  function startIntro() {
+    if (reduce.matches) return;
+    $('w-name').textContent = safe(() => stu().first_name) || '';
+    welcome.hidden = false;
+    welcome.classList.remove('go', 'leave');
+    void welcome.offsetWidth;
+    welcome.classList.add('go');
+    body.classList.add('intro');
+    introTimer = setTimeout(endIntro, 2600);
+  }
+  new MutationObserver(() => {
+    const locked = body.classList.contains('locked');
+    if (locked === wasLocked) return;
+    wasLocked = locked;
+    if (locked) {
+      clearTimeout(introTimer);
+      welcome.hidden = true;
+      body.classList.remove('intro');
+      introQueue.length = 0;
+    } else {
+      startIntro();
+    }
+  }).observe(body, {attributes: true, attributeFilter: ['class']});
+  welcome.addEventListener('click', endIntro);
+
+  /* Toasts: non-blocking replacement for alert() ------------------------- */
+  const toasts = document.body.appendChild(Object.assign(document.createElement('div'), {id: 'toasts'}));
+  toasts.setAttribute('aria-live', 'polite');
+  function toast(msg) {
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.setAttribute('role', 'status');
+    t.textContent = msg;
+    toasts.appendChild(t);
+    setTimeout(() => { t.classList.add('out'); setTimeout(() => t.remove(), 350); }, 4200);
+  }
+  window.alert = toast; // confirm() and prompt() stay native because script.js waits for their answers
+
+  /* Mobile / tablet navigation drawer ------------------------------------ */
+  const setNav = open => {
+    document.body.classList.toggle('nav-open', open);
+    $('menu').setAttribute('aria-expanded', String(open));
+  };
+  $('menu').addEventListener('click', () => setNav(!document.body.classList.contains('nav-open')));
+  $('scrim').addEventListener('click', () => setNav(false));
+  $('logout').addEventListener('click', () => setNav(false));
+  $('nav').addEventListener('click', e => {
+    if (e.target.closest('button')) { setNav(false); window.scrollTo(0, 0); }
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') setNav(false);
+  });
+  document.addEventListener('click', e => {
+    const b = e.target.closest('[data-goto]');
+    if (!b) return;
+    const link = document.querySelector(`#nav [data-view="${b.dataset.goto}"]`);
+    if (link) link.click();
+  });
+
+  /* Sidebar user avatar ---------------------------------------------------- */
+  new MutationObserver(() => { $('uavatar').textContent = initials($('uname').textContent).toUpperCase(); })
+    .observe($('uname'), {childList: true});
+
+  /* Table cells get data-label so tables can stack into cards on phones ---- */
+  const labelRows = tbody => {
+    const heads = [...tbody.closest('table').querySelectorAll('thead th')].map(th => th.textContent.trim());
+    tbody.querySelectorAll('tr').forEach((tr, n) => {
+      tr.style.setProperty('--i', Math.min(n, 10));
+      [...tr.children].forEach((td, i) => { td.dataset.label = heads[i] || ''; });
+    });
+  };
+  const tableObs = new MutationObserver(recs => recs.forEach(r => labelRows(r.target)));
+  document.querySelectorAll('tbody').forEach(tb => tableObs.observe(tb, {childList: true}));
+
+  /* Loading states --------------------------------------------------------- */
+  new MutationObserver(() => {
+    $('lerr').dataset.state = /^Loading/i.test($('lerr').textContent) ? 'loading' : '';
+  }).observe($('lerr'), {childList: true});
+  new MutationObserver(() => {
+    $('ssubmit').classList.toggle('is-busy', /\.\.\.$/.test($('ssubmit').textContent));
+  }).observe($('ssubmit'), {childList: true});
+
+  /* Statistics: count-up and GPA meter ------------------------------------- */
+  function animateMeter(bar, pct) {
+    if (!bar) return;
+    if (reduce.matches) { bar.style.width = pct + '%'; return; }
+    bar.style.width = '0%';
+    void bar.offsetWidth;
+    requestAnimationFrame(() => { bar.style.width = pct + '%'; });
+  }
+
+  function onStat(el) {
+    if (el.id === 'st-courses') renderDashboard(); // st-courses is rewritten on every dashboard render
+    afterIntro(() => animateStat(el));
+  }
+
+  function animateStat(el) {
+    const raw = el.textContent.trim();
+    const val = parseFloat(raw);
+    const numeric = /^\d+(\.\d+)?$/.test(raw);
+    const max = parseFloat(el.dataset.max);
+    const bar = el.parentElement.querySelector('.meter i');
+    const fill = el.hasAttribute('data-invert') ? (max - val) / (max - 1) * 100 : val / max * 100;
+    if (bar) animateMeter(bar, numeric && max ? Math.max(0, Math.min(100, fill)) : 0);
+    if (!numeric || reduce.matches) return;
+    const decimals = (raw.split('.')[1] || '').length;
+    const token = el.__t = (el.__t || 0) + 1;
+    const start = performance.now();
+    const step = now => {
+      if (el.__t !== token) return;
+      const p = Math.min(1, (now - start) / 700);
+      el.textContent = (val * (1 - Math.pow(1 - p, 3))).toFixed(decimals);
+      statObs.takeRecords(); // ignore our own writes
+      if (p < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+  const statObs = new MutationObserver(recs => new Set(recs.map(r => r.target)).forEach(onStat));
+  document.querySelectorAll('[data-count]').forEach(el => statObs.observe(el, {childList: true}));
+
+  /* Dashboard widgets (course cards, progress, student panel, news) -------- */
+  const ACCENTS = ['var(--gold)', 'var(--navy2)', 'var(--blue)'];
+
+  function renderDashboard() {
+    const s = safe(() => stu());
+    if (!s) return;
+    const p = safe(() => prog()) || {};
+    const list = safe(() => active()) || [];
+    const work = safe(() => myWork()) || [];
+    const fmt = d => safe(() => fmtDate(d)) || '';
+    const now = new Date();
+
+    // Hero
+    $('hero-name').textContent = 'Welcome back, ' + s.first_name;
+    $('hero-date').textContent = now.toLocaleDateString('en-PH', {weekday: 'long', month: 'long', day: 'numeric', year: 'numeric'});
+    $('hero-meta').innerHTML = [p.program_name || s.program, s.year_level, s.enrollment_status]
+      .filter(Boolean).map(t => `<span class="chip">${esc(t)}</span>`).join('');
+
+    // Student information
+    $('dp-avatar').textContent = (s.first_name[0] + s.last_name[0]).toUpperCase();
+    $('dp-name').textContent = s.first_name + ' ' + s.last_name;
+    $('dp-id').textContent = 'ID ' + s.student_id;
+    $('dp-program').textContent = s.program;
+    $('dp-year').textContent = s.year_level;
+    $('dp-status').textContent = s.enrollment_status;
+
+    // Course cards
+    const cards = list.map(({e, c}, i) => {
+      const asg = db.assignments.filter(a => a.subject_id === c.subject_id);
+      const done = asg.filter(a => db.submissions.some(x => x.assignment_id === a.assignment_id && x.student_id === me)).length;
+      const pct = asg.length ? Math.round(done / asg.length * 100) : 0;
+      const g = gradeOf(e);
+      const L = g ? toGPA(g.score) : null;
+      const tone = !L ? '' : !L.passed ? ' low' : L.points <= 1.75 ? '' : ' mid';
+      return `<article class="course-card" data-goto="courses" role="link" tabindex="0" aria-label="${esc(c.course_name)}: open courses" style="--i:${i};--w:${pct}%;--accent:${ACCENTS[i % ACCENTS.length]}">
+        <div class="cc-top"><span class="cc-code">${esc(code(c.subject_id))}</span>${L
+          ? `<span class="cc-grade${tone}" title="Score ${esc(g.score)}">${L.text}</span>`
+          : '<span class="cc-pending">Not graded</span>'}</div>
+        <h3 class="cc-name">${esc(c.course_name)}</h3>
+        <p class="cc-meta">${esc(c.instructor)} &bull; ${esc(c.units)} units</p>
+        <div><div class="cc-row"><span>Assignments submitted</span><b>${done}/${asg.length}</b></div>
+        <div class="meter" aria-hidden="true"><i></i></div></div>
+      </article>`;
+    });
+    $('dash-courses').innerHTML = cards.join('');
+    $('dash-courses').hidden = cards.length === 0;
+    $('dash-courses-empty').hidden = cards.length > 0;
+
+    // Progress
+    const submitted = work.filter(w => w.sub).length;
+    const pct = work.length ? Math.round(submitted / work.length * 100) : 0;
+    const ring = $('dp-ring');
+    const C = 289.03;
+    $('dp-pct').textContent = pct + '%';
+    $('dp-ring-text').textContent = work.length ? `${submitted} of ${work.length} assignments submitted.` : 'No assignments yet.';
+    ring.style.transition = 'none';
+    ring.style.strokeDashoffset = C;
+    void ring.getBoundingClientRect();
+    ring.style.transition = '';
+    afterIntro(() => requestAnimationFrame(() => { ring.style.strokeDashoffset = C * (1 - pct / 100); }));
+
+    const graded = list.filter(({e}) => gradeOf(e)).length;
+    $('dp-graded-text').textContent = graded + '/' + list.length;
+    afterIntro(() => animateMeter($('dp-graded'), list.length ? graded / list.length * 100 : 0));
+
+    // Announcements, built only from real portal data
+    const news = [];
+    const overdue = work.filter(w => !w.sub && new Date(w.a.due_date) < now);
+    const next = work.find(w => !w.sub && new Date(w.a.due_date) >= now);
+    if (overdue.length) news.push({tone: 'bad', ic: 'clock', h: `${overdue.length} overdue assignment${overdue.length > 1 ? 's' : ''}`, s: 'Open Assignments to submit your work.'});
+    if (next) news.push({tone: 'warn', ic: 'clipboard', h: `Next deadline: ${next.a.title}`, s: `${code(next.c.subject_id)}, due ${fmt(next.a.due_date)}`});
+    const sids = db.subjects.filter(x => x.program_id === p.program_id).map(x => x.subject_id);
+    db.modules.filter(m => sids.includes(m.subject_id))
+      .sort((a, b) => new Date(b.date_uploaded) - new Date(a.date_uploaded)).slice(0, 2)
+      .forEach(m => news.push({tone: 'gold', ic: 'layers', h: `Module ${m.module_no}: ${m.title}`, s: `${code(m.subject_id)}, uploaded ${fmt(m.date_uploaded)}`}));
+    if (graded) news.push({tone: 'ok', ic: 'award', h: `Grades posted for ${graded} of ${list.length} course${list.length > 1 ? 's' : ''}`, s: 'Open Grades to review your scores.'});
+    const lm = db.modules.filter(m => sids.includes(m.subject_id)).sort((a, b) => new Date(b.date_uploaded) - new Date(a.date_uploaded))[0];
+    $('dp-latest').textContent = lm ? `Newest: Module ${lm.module_no}, ${lm.title} (${code(lm.subject_id)})` : 'No modules have been published for your program yet.';
+    const tm = t => { const m = /^(\d{1,2}):(\d{2})/.exec(t || ''); if (!m) return ''; const h = +m[1]; return (h % 12 || 12) + ':' + m[2] + (h < 12 ? ' AM' : ' PM'); };
+    const sched = db.mySections || [];
+    $('dash-sched-card').hidden = sched.length === 0;
+    $('dash-sched').innerHTML = sched.map((x, i) => `<li style="--i:${i}"><span class="news-ic gold">${icon('clock')}</span><div><b>${esc(x.name)}</b><small>${esc([x.course_name, x.days, x.start_time && x.end_time ? tm(x.start_time) + ' to ' + tm(x.end_time) : '', x.room].filter(Boolean).join(' \u2022 '))}</small></div></li>`).join('');
+    news.unshift(...(db.announcements || []).slice(0, 2).map(n => ({tone: 'gold', ic: 'bell', h: n.title, s: String(n.body || '').slice(0, 100)})));
+    $('dash-news').innerHTML = news.length
+      ? news.slice(0, 5).map((n, i) => `<li style="--i:${i}"><span class="news-ic ${n.tone}">${icon(n.ic)}</span><div><b>${esc(n.h)}</b><small>${esc(n.s)}</small></div></li>`).join('')
+      : `<li class="news-empty">${icon('bell')} No announcements right now.</li>`;
+  }
+
+  /* Sliding active indicator in the sidebar -------------------------------- */
+  const nav = $('nav');
+  const pill = document.createElement('span');
+  pill.className = 'nav-pill';
+  pill.setAttribute('aria-hidden', 'true');
+  nav.insertBefore(pill, nav.firstChild);
+  function placePill() {
+    const b = nav.querySelector('button.on');
+    if (!b || !b.offsetHeight) return;
+    pill.style.setProperty('--y', b.offsetTop + 'px');
+    pill.style.setProperty('--h', b.offsetHeight + 'px');
+    if (!pill.classList.contains('show')) pill.classList.add('show');
+  }
+  // ignore the pill's own class changes, otherwise this observer re-triggers itself forever
+  // keeps aria-current and the title icon in step with the tab that script.js marks as .on
+  function syncCurrent() {
+    nav.querySelectorAll('button[data-view]').forEach(b => {
+      if (b.classList.contains('on')) b.setAttribute('aria-current', 'page');
+      else b.removeAttribute('aria-current');
+    });
+    const u = nav.querySelector('button.on use'), pi = $('page-ic');
+    if (u && pi) pi.querySelector('use').setAttribute('href', u.getAttribute('href'));
+  }
+  new MutationObserver(recs => { if (recs.some(r => r.target !== pill)) { placePill(); syncCurrent(); } })
+    .observe(nav, {attributes: true, subtree: true, attributeFilter: ['class']});
+  window.addEventListener('resize', placePill);
+
+  /* Title swap animation --------------------------------------------------- */
+  ['title', 'sub'].forEach(id => new MutationObserver(() => {
+    const el = $(id);
+    el.classList.remove('swap');
+    void el.offsetWidth;
+    el.classList.add('swap');
+  }).observe($(id), {childList: true}));
+
+  /* Shake the form card on an error ---------------------------------------- */
+  const shake = el => {
+    const c = el.closest('.auth-card');
+    if (!c) return;
+    c.classList.remove('shake');
+    void c.offsetWidth;
+    c.classList.add('shake');
+  };
+  new MutationObserver(() => {
+    const t = $('lerr').textContent.trim();
+    if (t && !/^Loading/i.test(t)) shake($('lerr'));
+  }).observe($('lerr'), {childList: true});
+  new MutationObserver(() => { if ($('serr').textContent.trim()) shake($('serr')); })
+    .observe($('serr'), {childList: true});
+
+  /* Button ripple and card spotlight --------------------------------------- */
+  document.addEventListener('pointerdown', e => {
+    if (reduce.matches) return;
+    const b = e.target.closest('.btn, .tablewrap .dl, .item a.dl, nav button');
+    if (!b || b.disabled) return;
+    const r = b.getBoundingClientRect(), d = Math.max(r.width, r.height) * 2;
+    const s = document.createElement('span');
+    s.className = 'ripple';
+    s.style.cssText = `width:${d}px;height:${d}px;left:${e.clientX - r.left - d / 2}px;top:${e.clientY - r.top - d / 2}px`;
+    b.appendChild(s);
+    s.addEventListener('animationend', () => s.remove());
+  });
+  document.addEventListener('pointermove', e => {
+    const c = e.target.closest('.stat, .course-card, .item, .panel-card');
+    if (!c) return;
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, {passive: true});
+
+  /* Log in button shows a spinner while the request is running -------------- */
+  const loginBtn = $('loginForm').querySelector('button[type="submit"]');
+  const idleLogin = () => loginBtn.classList.remove('is-busy');
+  $('loginForm').addEventListener('submit', () => {
+    loginBtn.classList.add('is-busy');
+    setTimeout(idleLogin, 15000);
+  });
+  new MutationObserver(idleLogin).observe($('lerr'), {childList: true});
+  new MutationObserver(() => { if (!body.classList.contains('locked')) idleLogin(); })
+    .observe(body, {attributes: true, attributeFilter: ['class']});
+
+  /* Tab switch feedback: gold sweep under the top bar + icon pop ------------ */
+  new MutationObserver(() => {
+    const bar = document.querySelector('.topbar'), pi = $('page-ic');
+    bar.classList.remove('sweep'); pi.classList.remove('pop');
+    void bar.offsetWidth;
+    bar.classList.add('sweep'); pi.classList.add('pop');
+  }).observe($('title'), {childList: true});
+
+  /* Keyboard: arrow keys, Home and End move between sidebar tabs ------------- */
+  nav.addEventListener('keydown', e => {
+    if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) return;
+    const tabs = [...nav.querySelectorAll('button')];
+    let i = tabs.indexOf(document.activeElement);
+    if (i < 0) return;
+    e.preventDefault();
+    i = e.key === 'Home' ? 0 : e.key === 'End' ? tabs.length - 1
+      : (i + (e.key === 'ArrowDown' ? 1 : -1) + tabs.length) % tabs.length;
+    tabs[i].focus();
+  });
+})();
+
+</script>
+  <script>
+/* Header search + notifications. Read-only: uses data script.js already loaded
+   (db, me, role, active(), myWork(), gradeOf(), code(), fmtDate()). No new
+   queries, tables or writes, so results follow the same scoping as each page. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+  const go = v => { const l = document.querySelector(`#nav [data-view="${v}"]`); if (l) l.click(); };
+  const ready = () => typeof me !== 'undefined' && me != null && !!stu();
+
+  /* ---- Search ---- */
+  const inp = $('gsearch'), box = $('sresults'), clr = $('sclear'), spin = $('sspin');
+  let items = [], idx = -1, timer = 0;
+
+  const setOpen = o => { box.hidden = !o; inp.setAttribute('aria-expanded', String(o)); if (!o) { idx = -1; inp.removeAttribute('aria-activedescendant'); } };
+
+  function collect(q) {
+    if (!ready()) return [];
+    const t = q.toLowerCase(), has = (...f) => f.some(x => String(x == null ? '' : x).toLowerCase().includes(t)), out = [];
+    if (role !== 'student') db.student_profiles.filter(s => has(s.first_name + ' ' + s.last_name, s.student_id, s.email, s.program)).slice(0, 5)
+      .forEach(s => out.push({g: 'Students', t: s.first_name + ' ' + s.last_name, s: `ID ${s.student_id} \u00b7 ${s.program}`,
+        run: () => { const v = $('viewas'); v.value = s.student_id; v.dispatchEvent(new Event('change')); go('profile'); }}));
+    active().filter(({c}) => has(c.course_name, code(c.subject_id), c.instructor, c.department)).slice(0, 5)
+      .forEach(({c}) => out.push({g: 'Courses', t: c.course_name, s: `${code(c.subject_id)} \u00b7 ${c.instructor}`, run: () => go('courses')}));
+    const sids = db.subjects.filter(s => s.program_id === prog().program_id).map(s => s.subject_id);
+    db.modules.filter(m => sids.includes(m.subject_id) && has(m.title, m.description, code(m.subject_id))).slice(0, 5)
+      .forEach(m => out.push({g: 'Modules', t: `Module ${m.module_no}: ${m.title}`, s: code(m.subject_id), run: () => go('modules')}));
+    myWork().filter(({a, c}) => has(a.title, code(c.subject_id))).slice(0, 5)
+      .forEach(({a, c}) => out.push({g: 'Assignments', t: a.title, s: `${code(c.subject_id)} \u00b7 due ${fmtDate(a.due_date)}`, run: () => go('assignments')}));
+    active().filter(({e, c}) => gradeOf(e) && (has(c.course_name, code(c.subject_id), 'grade') || has(gradeOf(e).score, toGPA(gradeOf(e).score).text))).slice(0, 5)
+      .forEach(({e, c}) => { const g = gradeOf(e); out.push({g: 'Grades', t: c.course_name, s: `Score ${g.score} (GPA ${toGPA(g.score).text})`, run: () => go('grades')}); });
+    myEnrollments().filter(e => { const c = db.courses.find(c => c.course_code === e.course_code) || {}; return has(c.course_name, code(c.subject_id), e.enrollment_status, e.school_year, e.semester); }).slice(0, 5)
+      .forEach(e => { const c = db.courses.find(c => c.course_code === e.course_code) || {}; out.push({g: 'Enrollments', t: c.course_name || e.course_code, s: `${e.enrollment_status} \u00b7 ${e.school_year}`, run: () => go('enrollments')}); });
+    const me0 = stu();
+    if (me0 && has(me0.first_name + ' ' + me0.last_name, me0.email, me0.program, me0.year_level, me0.student_id, 'student profile'))
+      out.push({g: 'Student profile', t: me0.first_name + ' ' + me0.last_name, s: `${me0.program} \u00b7 ${me0.year_level}`, run: () => go('profile')});
+    return out;
+  }
+
+  function render(q) {
+    try { items = collect(q); }
+    catch (e) { items = []; box.innerHTML = '<div class="sempty">Search is unavailable right now. Try again in a moment.</div>'; $('sstatus').textContent = 'Search failed'; idx = -1; spin.hidden = true; setOpen(true); return; }
+    let last = '', html = '';
+    items.forEach((it, i) => {
+      if (it.g !== last) { html += `<div class="sgroup" role="presentation">${it.g}</div>`; last = it.g; }
+      html += `<div class="sitem" role="option" id="so${i}" data-i="${i}" aria-selected="false"><b>${esc(it.t)}</b><small>${esc(it.s)}</small></div>`;
+    });
+    box.innerHTML = html || `<div class="sempty">No results for \u201c${esc(q)}\u201d.</div>`;
+    $('sstatus').textContent = items.length ? `${items.length} result${items.length > 1 ? 's' : ''} found` : 'No results found';
+    idx = -1; spin.hidden = true; setOpen(true);
+  }
+
+  const mark = i => {
+    box.querySelectorAll('.sitem').forEach((el, n) => el.setAttribute('aria-selected', String(n === i)));
+    const el = box.querySelector(`#so${i}`);
+    if (el) { el.scrollIntoView({block: 'nearest'}); inp.setAttribute('aria-activedescendant', 'so' + i); }
+  };
+  const pick = i => { const it = items[i]; if (!it) return; setOpen(false); inp.value = ''; clr.hidden = true; it.run(); };
+
+  inp.addEventListener('input', () => {
+    const q = inp.value.trim();
+    clr.hidden = !inp.value;
+    clearTimeout(timer);
+    if (!q) { spin.hidden = true; setOpen(false); return; }
+    spin.hidden = false;
+    timer = setTimeout(() => render(q), 150);
+  });
+  inp.addEventListener('focus', () => { if (inp.value.trim() && items.length) setOpen(true); });
+  inp.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { setOpen(false); return; }
+    if (box.hidden || !items.length) return;
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      idx = (idx + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length;
+      mark(idx);
+    } else if (e.key === 'Enter') { e.preventDefault(); pick(idx >= 0 ? idx : 0); }
+  });
+  box.addEventListener('mousedown', e => { const el = e.target.closest('.sitem'); if (el) { e.preventDefault(); pick(+el.dataset.i); } });
+  clr.addEventListener('click', () => { inp.value = ''; clr.hidden = true; clearTimeout(timer); spin.hidden = true; setOpen(false); inp.focus(); });
+
+  /* ---- Notifications (derived from existing portal data; no notification table exists) ---- */
+  const bell = $('bell'), panel = $('npanel'), list = $('nlist'), badge = $('bellcount');
+  const key = () => 'valemont:nread:' + me;
+  const readSet = () => { try { return new Set(JSON.parse(localStorage.getItem(key())) || []); } catch (e) { return new Set(); } };
+  const saveSet = s => { try { localStorage.setItem(key(), JSON.stringify([...s])); } catch (e) { /* storage blocked: read state lasts for this page view only */ } };
+  let memRead = new Set(), notes = [];
+
+  function build() {
+    if (!ready()) return [];
+    const now = new Date(), out = [];
+    myWork().filter(w => !w.sub).forEach(w => {
+      const due = new Date(w.a.due_date), over = due < now;
+      if (over || due - now < 7 * 864e5) out.push({id: `a${w.a.assignment_id}${over ? 'o' : ''}`, t: (over ? 'Overdue: ' : 'Due soon: ') + w.a.title, s: `${code(w.c.subject_id)} \u00b7 due ${fmtDate(w.a.due_date)}`, time: due, view: 'assignments'});
+    });
+    const sids = db.subjects.filter(s => s.program_id === prog().program_id).map(s => s.subject_id);
+    db.modules.filter(m => sids.includes(m.subject_id)).sort((a, b) => new Date(b.date_uploaded) - new Date(a.date_uploaded)).slice(0, 3)
+      .forEach(m => out.push({id: `m${m.subject_id}-${m.module_no}`, t: `New module: ${m.title}`, s: `${code(m.subject_id)} \u00b7 uploaded ${fmtDate(m.date_uploaded)}`, time: new Date(m.date_uploaded), view: 'modules'}));
+    active().forEach(({e, c}) => { if (gradeOf(e)) out.push({id: 'g' + e.enrollment_id, t: `Grade posted: ${c.course_name}`, s: 'Open Grades to review your score.', time: null, view: 'grades'}); });
+    return out.sort((a, b) => (b.time ? +b.time : 0) - (a.time ? +a.time : 0)).slice(0, 8);
+  }
+
+  const isRead = id => memRead.has(id);
+  function paintBadge() {
+    const n = notes.filter(x => !isRead(x.id)).length;
+    badge.hidden = n === 0;
+    badge.textContent = n > 9 ? '9+' : n;
+    bell.setAttribute('aria-label', n ? `Notifications, ${n} unread` : 'Notifications, none unread');
+    $('nreadall').disabled = n === 0;
+  }
+  function paintList() {
+    list.innerHTML = notes.length ? notes.map((n, i) =>
+      `<button type="button" class="nitem${isRead(n.id) ? '' : ' unread'}" data-i="${i}"><i aria-hidden="true"></i><span><b>${esc(n.t)}</b><small>${esc(n.s)}</small></span></button>`).join('')
+      : '<div class="sempty">You\u2019re all caught up. No notifications right now.</div>';
+  }
+  function refresh() {
+    if (!ready()) { notes = []; badge.hidden = true; return; }
+    memRead = readSet(); notes = build(); paintBadge(); paintList();
+  }
+  const setPanel = o => { panel.hidden = !o; bell.setAttribute('aria-expanded', String(o)); if (o) { refresh(); } };
+
+  bell.addEventListener('click', () => setPanel(panel.hidden));
+  $('nreadall').addEventListener('click', () => { notes.forEach(n => memRead.add(n.id)); saveSet(memRead); paintBadge(); paintList(); });
+  list.addEventListener('click', e => {
+    const b = e.target.closest('.nitem'); if (!b) return;
+    const n = notes[+b.dataset.i]; memRead.add(n.id); saveSet(memRead);
+    setPanel(false); go(n.view);
+  });
+
+  document.addEventListener('click', e => {
+    if (!e.target.closest('#searchbox')) setOpen(false);
+    if (!e.target.closest('.bellwrap')) setPanel(false);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') { setPanel(false); if (!panel.hidden) bell.focus(); } });
+
+  /* Keep the badge in step with whichever student is shown and after actions like submitting work */
+  new MutationObserver(() => { refresh(); inp.value = ''; clr.hidden = true; setOpen(false); }).observe($('title'), {childList: true});
+  new MutationObserver(refresh).observe($('uname'), {childList: true});
+  $('view').addEventListener('click', () => setTimeout(refresh, 0));
+  $('logout').addEventListener('click', () => { badge.hidden = true; setPanel(false); setOpen(false); inp.value = ''; clr.hidden = true; });
+})();
+</script>
+  <script>
+/* Assignment submission dialog: replaces the browser prompt() with a themed
+   attachment area. Returns the text script.js stores as the submission
+   content, or null when cancelled. */
+(() => {
+  'use strict';
+  // This project has no server-side upload rules or storage, so these limits are placeholders:
+  // set them to match your backend's accepted types and size limit.
+  const MAX = 10 * 1024 * 1024;
+  const EXT = ['pdf', 'doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'txt', 'zip', 'jpg', 'jpeg', 'png'];
+  const size = n => n < 1024 ? n + ' B' : n < 1048576 ? Math.round(n / 1024) + ' KB' : (n / 1048576).toFixed(1) + ' MB';
+  const ic = n => `<svg class="ic" aria-hidden="true"><use href="#i-${n}"/></svg>`;
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+
+  const dlg = document.createElement('dialog');
+  dlg.id = 'subdlg';
+  dlg.setAttribute('aria-labelledby', 'sub-title');
+  dlg.innerHTML = `
+    <div class="sub-head">
+      <div><h2 id="sub-title">Submit assignment</h2><p id="sub-meta"></p></div>
+      <button type="button" class="sub-x" id="sub-x" aria-label="Close">${ic('x')}</button>
+    </div>
+    <div class="sub-body">
+      <h3 class="sub-h">Attach Your Assignment</h3>
+      <p class="sub-hint">Select a file from your device to submit your work.</p>
+      <div class="dz" id="dz">
+        <span class="dz-ic">${ic('upload')}</span>
+        <b>Drag and drop your file here</b>
+        <span class="dz-or">or</span>
+        <button type="button" class="dz-btn" id="dz-pick">Choose File</button>
+        <input type="file" id="dz-input" accept=".${EXT.join(',.')}" hidden>
+        <small>PDF, Word, PowerPoint, Excel, TXT, ZIP, JPG or PNG. Maximum 10 MB.</small>
+      </div>
+      <div class="dz-err" id="dz-err" role="alert"></div>
+      <p class="sr" id="dz-status" role="status" aria-live="polite"></p>
+      <div class="dz-file" id="dz-file" hidden>
+        <span class="dz-fic" id="dz-ext" aria-hidden="true"></span>
+        <span class="dz-fname"><b id="dz-name"></b><small id="dz-size"></small></span>
+        <button type="button" class="dz-rm" id="dz-rm" aria-label="Remove file">${ic('x')}</button>
+      </div>
+      <label class="sub-note" for="sub-text">Note or typed answer (optional)</label>
+      <textarea id="sub-text" rows="3" placeholder="Add a message for your instructor..."></textarea>
+    </div>
+    <div class="sub-foot">
+      <button type="button" class="sub-cancel" id="sub-cancel">Cancel</button>
+      <button type="button" class="btn" id="sub-go" disabled>Submit Assignment</button>
+    </div>`;
+  document.body.appendChild(dlg);
+
+  const q = s => dlg.querySelector(s);
+  const dz = q('#dz'), input = q('#dz-input'), err = q('#dz-err'), text = q('#sub-text'), go = q('#sub-go');
+  let file = null, resolve = null;
+
+  const sync = () => {
+    q('#dz-file').hidden = !file;
+    if (file) { q('#dz-name').textContent = file.name; q('#dz-size').textContent = size(file.size); q('#dz-ext').textContent = file.name.split('.').pop().slice(0, 4).toUpperCase(); }
+    go.disabled = !file && !text.value.trim();
+  };
+  function setFile(f) {
+    err.textContent = '';
+    if (!f) return;
+    const ext = f.name.split('.').pop().toLowerCase();
+    if (!EXT.includes(ext)) { err.textContent = 'That file type is not supported. Choose a PDF, Word, PowerPoint, Excel, TXT, ZIP, JPG or PNG file.'; return; }
+    if (f.size > MAX) { err.textContent = `That file is ${size(f.size)}. The limit is 10 MB.`; return; }
+    file = f; sync(); q('#dz-status').textContent = `${f.name} attached, ${size(f.size)}.`;
+  }
+  const finish = v => { const r = resolve; resolve = null; dlg.close(); if (r) r(v); };
+
+  q('#dz-pick').addEventListener('click', () => input.click());
+  input.addEventListener('change', () => { setFile(input.files[0]); input.value = ''; });
+  q('#dz-rm').addEventListener('click', () => { file = null; err.textContent = ''; sync(); q('#dz-status').textContent = 'File removed.'; q('#dz-pick').focus(); });
+  text.addEventListener('input', sync);
+  ['dragenter', 'dragover'].forEach(t => dz.addEventListener(t, e => { e.preventDefault(); dz.classList.add('drag'); }));
+  dz.addEventListener('dragleave', e => { if (!dz.contains(e.relatedTarget)) dz.classList.remove('drag'); });
+  dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('drag'); setFile(e.dataTransfer.files[0]); });
+  q('#sub-x').addEventListener('click', () => finish(null));
+  q('#sub-cancel').addEventListener('click', () => finish(null));
+  go.addEventListener('click', () => {
+    if (go.disabled) return; // blocks double submits
+    go.disabled = true; go.classList.add('is-busy');
+    const parts = [];
+    if (file) parts.push(`Attached file: ${file.name} (${size(file.size)})`);
+    if (text.value.trim()) parts.push(text.value.trim());
+    finish(parts.join('\n'));
+  });
+  dlg.addEventListener('close', () => { dz.classList.remove('drag'); if (resolve) { const r = resolve; resolve = null; r(null); } });
+  dlg.addEventListener('mousedown', e => { if (e.target === dlg) finish(null); }); // click on the backdrop
+
+  window.askSubmission = a => new Promise(res => {
+    file = null; text.value = ''; err.textContent = ''; go.classList.remove('is-busy'); q('#dz-status').textContent = ''; sync();
+    q('#sub-title').textContent = a ? a.title : 'Submit assignment';
+    q('#sub-meta').textContent = a ? `Due ${fmtDate(a.due_date)}` : '';
+    resolve = res;
+    dlg.showModal();
+  });
+})();
+</script>
+  <script>
+/* Enrollment tab. The browser only DISPLAYS state; the open/closed decision, identity,
+   duplicate and drop-deadline checks are made by the Supabase functions in enrollment_setup.sql. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+  const TZ = 'Asia/Manila';
+  const fmt = d => d ? new Date(d).toLocaleString('en-PH', {timeZone: TZ, dateStyle: 'medium', timeStyle: 'short'}) : '\u2014';
+  const cred = () => { try { return JSON.parse(sessionStorage.getItem('cred')); } catch (e) { return null; } };
+  const toIso = v => v ? new Date(v + ':00+08:00').toISOString() : null;
+  const toLocal = iso => iso ? new Date(iso).toLocaleString('sv-SE', {timeZone: TZ}).slice(0, 16).replace(' ', 'T') : '';
+  let win = null, periods = [], skew = 0, wired = false;
+  const now = () => Date.now() + skew;               // server-corrected clock, for display only
+
+  window.enrollView = async () => {
+    let err = null;
+    try {
+      const [w, p] = await Promise.all([sb.rpc('get_enrollment_window'), sb.from('enrollment_periods').select('*').order('opens_at', {ascending: false})]);
+      if (w.error || p.error) throw (w.error || p.error);
+      win = w.data; periods = p.data || []; skew = Date.parse(win.now) - Date.now();
+    } catch (e) { err = e; win = null; periods = []; console.error(e); }
+    paint(err);
+  };
+
+  function paint(err) {
+    const st = err ? 'error' : win.status, per = win && win.period;
+    const msg = {
+      open: ['Enrollment Open', 'ok', 'You can enroll in the courses offered for this term.'],
+      not_yet_open: ['Enrollment Not Yet Open', 'warn', 'Course offerings will become available when enrollment opens.'],
+      closed: ['Enrollment Closed', 'bad', 'Enrollment is currently closed. Course offerings will become available when the next official enrollment period opens.'],
+      none: ['No Schedule Available', 'warn', 'No enrollment period is currently scheduled.'],
+      error: ['Schedule Unavailable', 'bad', 'The enrollment schedule could not be loaded, so enrollment is unavailable.' + (err && err.code === 'PGRST202' ? ' Run enrollment_setup.sql in Supabase.' : '')]
+    }[st];
+    const dates = per ? `${esc(per.school_year)}, ${esc(per.semester)} \u00b7 Opens ${fmt(per.opens_at)} \u00b7 Closes ${fmt(per.closes_at)}${per.drop_deadline ? ' \u00b7 Drop deadline ' + fmt(per.drop_deadline) : ''} (Philippine Time)` : '';
+    $('en-banner').className = 'en-banner ' + msg[1];
+    $('en-banner').innerHTML = `<b>${msg[0]}</b><p>${msg[2]}</p>${dates ? `<small>${dates}</small>` : ''}`;
+
+    const open = st === 'open' && role === 'student';
+    let rows = [];
+    if (open) {
+      const have = new Set(myEnrollments().filter(e => e.enrollment_status === 'Enrolled').map(e => e.course_code));
+      rows = db.courses.filter(c => c.school_year === per.school_year && !have.has(c.course_code)).map(c =>
+        [`<b>${esc(code(c.subject_id))}</b> ${esc(c.course_name)}`, c.units, esc(c.instructor || '\u2014'), badge('Not Enrolled'), btn(`enroll|${c.course_code}`, 'Enroll')]);
+    }
+    fillTable('enroll-body', 'enroll-empty', rows);
+    $('enroll-empty').textContent = open ? 'You are enrolled in every course offered this term.'
+      : role !== 'student' ? 'Students enroll in courses here while an enrollment period is open.' : 'No courses are available right now. ' + msg[2];
+
+    const mine = myEnrollments().map(e => {
+      const c = db.courses.find(c => c.course_code === e.course_code) || {};
+      const p = periods.find(p => p.school_year === e.school_year && p.semester === e.semester);
+      const ok = role === 'student' && e.enrollment_status === 'Enrolled' && p && p.is_active && now() <= new Date(p.drop_deadline || p.closes_at).getTime();
+      return [`<b>${esc(code(c.subject_id))}</b> ${esc(c.course_name || e.course_code)}`, esc(e.school_year), fmtDate(e.enrollment_date), badge(e.enrollment_status),
+        ok ? btn(`drop|${e.course_code}`, 'Drop') : (role === 'student' && e.enrollment_status === 'Enrolled' ? 'Drop period closed' : '')];
+    });
+    fillTable('enrolled-body', 'enrolled-empty', mine);
+    paintAdmin();
+  }
+
+  /* Administrator schedule manager */
+  const status = p => !p.is_active ? ['Inactive', 'warn'] : now() < Date.parse(p.opens_at) ? ['Scheduled', 'warn'] : now() <= Date.parse(p.closes_at) ? ['Open', 'ok'] : ['Closed', 'bad'];
+  function paintAdmin() {
+    $('en-admin').hidden = role !== 'admin';
+    if (role !== 'admin') return;
+    const years = [...new Set(db.courses.map(c => c.school_year))].sort();
+    if (!$('ap-year').options.length) $('ap-year').innerHTML = years.map(y => `<option>${esc(y)}</option>`).join('');
+    $('ap-body').innerHTML = periods.map(p => {
+      const [t, tone] = status(p);
+      const n = db.enrollment_data.filter(e => e.school_year === p.school_year && e.semester === p.semester);
+      return `<tr><td><b>${esc(p.school_year)}</b> ${esc(p.semester)}<br><small>${n.filter(e => e.enrollment_status === 'Enrolled').length} enrolled, ${n.filter(e => e.enrollment_status === 'Dropped').length} dropped</small></td><td>${fmt(p.opens_at)}</td><td>${fmt(p.closes_at)}</td><td>${fmt(p.drop_deadline)}</td><td><span class="badge ${tone}">${t}</span></td><td><button type="button" class="dl" data-edit="${p.period_id}">Edit</button></td></tr>`;
+    }).join('') || '<tr><td colspan="6">No enrollment periods yet. Create one so students can enroll.</td></tr>';
+    if (wired) return;
+    wired = true;
+    const msg = t => { $('ap-msg').textContent = t; };
+    const reset = () => { $('ap-id').value = ''; ['ap-open', 'ap-close', 'ap-drop'].forEach(i => $(i).value = ''); $('ap-active').checked = true; msg(''); };
+    $('ap-reset').onclick = reset;
+    $('ap-body').addEventListener('click', e => {
+      const b = e.target.closest('[data-edit]'); if (!b) return;
+      const p = periods.find(p => String(p.period_id) === b.dataset.edit); if (!p) return;
+      $('ap-id').value = p.period_id; $('ap-year').value = p.school_year; $('ap-sem').value = p.semester;
+      $('ap-open').value = toLocal(p.opens_at); $('ap-close').value = toLocal(p.closes_at); $('ap-drop').value = toLocal(p.drop_deadline);
+      $('ap-active').checked = p.is_active; msg(''); $('ap-year').focus();
+    });
+    $('ap-save').onclick = async () => {
+      const c = cred(), o = toIso($('ap-open').value), cl = toIso($('ap-close').value), d = toIso($('ap-drop').value);
+      msg('');
+      if (!c) { msg('Please log out and log in again to manage the schedule.'); return; }
+      if (!$('ap-year').value || !o || !cl) { msg('Choose an academic year and set both the opening and closing date and time.'); return; }
+      if (cl <= o) { msg('The closing date must be after the opening date.'); return; }
+      if (d && d < o) { msg('The dropping deadline cannot be before enrollment opens.'); return; }
+      $('ap-save').disabled = true;
+      const {error} = await sb.rpc('admin_save_enrollment_period', {p_email: c.email, p_hash: c.hash, p_period_id: $('ap-id').value ? +$('ap-id').value : null,
+        p_school_year: $('ap-year').value, p_semester: $('ap-sem').value, p_opens: o, p_closes: cl, p_drop: d, p_active: $('ap-active').checked});
+      $('ap-save').disabled = false;
+      if (error) { msg(error.code === 'P0001' ? error.message : error.code === 'PGRST202' ? 'Run enrollment_setup.sql in Supabase first.' : 'Could not save the schedule. Please try again.'); return; }
+      alert('Enrollment period saved.'); reset(); enrollView();
+    };
+  }
+
+  setInterval(() => { if (cur === 'enrollments' && !document.hidden && me != null) enrollView(); }, 60000);
+})();
+</script>
+  <script>
+/* Distributed navigation. Every control here clicks the existing #nav button,
+   so show(), renderers, permissions, history and the modules/enrollment
+   code keep working unchanged. No data is read or written here except
+   pendingList() for the quick-access count. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const nav = $('nav');
+  const goView = v => { const b = nav.querySelector(`[data-view="${v}"]`); if (b) b.click(); };
+
+  // Keyboard activation for non-button elements that act as links
+  document.addEventListener('keydown', e => {
+    const el = e.target.closest('[data-goto][role="link"]');
+    if (el && el === e.target && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); el.click(); }
+  });
+
+  // Active state for tiles and quick-access items follows the real current view
+  const syncActive = () => {
+    const on = nav.querySelector('button.on'), v = on && on.dataset.view;
+    document.querySelectorAll('[data-tile], [data-qv]').forEach(el => {
+      const active = (el.dataset.tile || el.dataset.qv) === v;
+      el.classList.toggle('is-active', active);
+      if (active) el.setAttribute('aria-current', 'page'); else el.removeAttribute('aria-current');
+    });
+  };
+  new MutationObserver(syncActive).observe(nav, {attributes: true, subtree: true, attributeFilter: ['class']});
+
+  // Deadline rows open Assignments
+  const rows = () => $('dash-body').querySelectorAll('tr').forEach(tr => {
+    tr.dataset.goto = 'assignments'; tr.setAttribute('role', 'link'); tr.tabIndex = 0;
+    tr.setAttribute('aria-label', (tr.firstElementChild ? tr.firstElementChild.textContent : 'Assignment') + ': open assignments');
+  });
+  new MutationObserver(rows).observe($('dash-body'), {childList: true});
+
+  // Floating quick access
+  const fab = $('qfab'), pnl = $('qpanel');
+  const pending = () => {
+    let n = 0; try { n = pendingList().length; } catch (e) { /* not ready */ }
+    const em = $('q-pending'); em.hidden = !n; em.textContent = n;
+  };
+  const setQ = open => {
+    pnl.hidden = !open; fab.setAttribute('aria-expanded', String(open)); fab.classList.toggle('open', open);
+    if (open) { pending(); syncActive(); }
+  };
+  fab.addEventListener('click', () => setQ(pnl.hidden));
+  pnl.addEventListener('click', e => { const b = e.target.closest('[data-qv]'); if (b) { setQ(false); goView(b.dataset.qv); } });
+  document.addEventListener('click', e => { if (!e.target.closest('#quick')) setQ(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !pnl.hidden) { setQ(false); fab.focus(); } });
+  new MutationObserver(() => { setQ(false); pending(); }).observe($('title'), {childList: true});
+  syncActive();
+})();
+</script>
+<script>
+/* Acadaelash account menu: initial, open/close, chevron state, light/dark theme.
+   Logout itself is the existing #logout handler (it clears the session and shows the login page);
+   this block only adds menu behaviour around it. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const KEY = 'acadaelash-theme';
+  const root = document.documentElement;
+  const btn = $('profilebtn'), menu = $('pmenu'), av = $('pavatar'), wrap = $('profilewrap');
+
+  /* Theme */
+  const getTheme = () => root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  function applyTheme(t, save) {
+    if (!save || t === getTheme() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setTheme(t, save); return; }
+    if (!document.startViewTransition) {            // older browsers: soft cross-fade
+      root.classList.add('theme-fade'); setTheme(t, save);
+      setTimeout(() => root.classList.remove('theme-fade'), 700);
+      return;
+    }
+    let o = window.__vtOrigin;                       // circular reveal grows from where the person clicked
+    if (!o) {
+      const tg = $('pf-theme'), r = tg && tg.getBoundingClientRect();
+      o = r && r.width ? {x: r.left + 32, y: r.top + r.height / 2} : {x: innerWidth - 60, y: 40};
+    }
+    root.style.setProperty('--vt-x', o.x + 'px');
+    root.style.setProperty('--vt-y', o.y + 'px');
+    root.style.setProperty('--vt-r', Math.hypot(Math.max(o.x, innerWidth - o.x), Math.max(o.y, innerHeight - o.y)) + 'px');
+    root.classList.add('vt-theme');
+    const vt = document.startViewTransition(() => setTheme(t, save));
+    vt.finished.finally(() => root.classList.remove('vt-theme'));
+  }
+  function setTheme(t, save) {
+    root.setAttribute('data-theme', t);
+    const m = document.querySelector('meta[name="theme-color"]');
+    if (m) m.setAttribute('content', t === 'dark' ? '#0E1420' : '#151C2C');
+    menu.querySelectorAll('[data-theme-opt]').forEach(b => {
+      const on = b.dataset.themeOpt === t;
+      b.setAttribute('aria-checked', String(on));
+      b.tabIndex = on ? 0 : -1;
+    });
+    if (save) { try { localStorage.setItem(KEY, t); } catch (e) { /* storage blocked: theme lasts for this visit */ } }
+  }
+  applyTheme(getTheme(), false);
+  menu.addEventListener('click', e => {
+    const b = e.target.closest('[data-theme-opt]');
+    if (b) applyTheme(b.dataset.themeOpt, true);
+  });
+  menu.querySelector('.seg').addEventListener('keydown', e => {
+    if (!/^Arrow(Left|Right|Up|Down)$/.test(e.key)) return;
+    e.preventDefault();
+    const next = getTheme() === 'dark' ? 'light' : 'dark';
+    applyTheme(next, true);
+    menu.querySelector('[data-theme-opt="' + next + '"]').focus();
+  });
+
+  /* Open / close */
+  function setOpen(open, focusBtn) {
+    menu.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    wrap.classList.toggle('open', open);
+    if (open) {
+      const bell = $('bell');
+      if (bell && bell.getAttribute('aria-expanded') === 'true') bell.click(); // one popup at a time
+    } else if (focusBtn) btn.focus();
+  }
+  btn.addEventListener('click', e => { e.stopPropagation(); setOpen(menu.hidden); });
+  document.addEventListener('click', e => { if (!menu.hidden && !wrap.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) setOpen(false, true); });
+  $('logout').addEventListener('click', () => { setOpen(false); av.textContent = ''; });
+  window.addEventListener('resize', () => { if (!menu.hidden) setOpen(false); });
+
+  /* Initial of the signed-in user: first letter of the name the portal already shows in #uname */
+  const first = t => { const m = String(t || '').trim().match(/[A-Za-z0-9\u00C0-\uFFFF]/); return m ? m[0].toUpperCase() : ''; };
+  const sync = () => { av.textContent = first($('uname').textContent); btn.setAttribute('aria-label', 'Account menu for ' + ($('uname').textContent.trim() || 'user')); };
+  new MutationObserver(sync).observe($('uname'), {childList: true, characterData: true, subtree: true});
+  sync();
+
+  /* Centered "Logging in..." / "Logging out..." overlay ------------------- */
+  const aw = $('authwait'), awText = $('aw-text'), awSub = $('aw-sub'), awBar = aw.querySelector('.aw-bar i'), MIN_MS = 2000;
+  const STEPS = {
+    'Logging in': ['Verifying your credentials', 'Loading your courses', 'Preparing your dashboard'],
+    'Logging out': ['Saving your session', 'Signing you out']
+  };
+  const DONE = {'Logging in': 'All set', 'Logging out': 'See you soon'};
+  let awShown = 0, awFail = 0, awHide = 0, awTick = 0, awSwap = 0;
+  function setSub(t) {
+    clearTimeout(awSwap);
+    awSub.classList.add('swap');
+    awSwap = setTimeout(() => { awSub.textContent = t; awSub.classList.remove('swap'); }, 200);
+  }
+  function showWait(text) {
+    clearTimeout(awHide); clearTimeout(awFail); clearInterval(awTick); clearTimeout(awSwap);
+    awText.textContent = text;
+    const steps = STEPS[text] || [];
+    let i = 0;
+    awSub.classList.remove('swap'); awSub.textContent = steps[0] || '';
+    awTick = setInterval(() => { if (i < steps.length - 1) setSub(steps[++i]); else clearInterval(awTick); }, 1100);
+    aw.classList.remove('done');                        // restart the progress bar
+    awBar.style.cssText = 'animation:none'; void awBar.offsetWidth; awBar.style.cssText = '';
+    aw.hidden = false;
+    void aw.offsetWidth;
+    aw.classList.add('show');
+    awShown = Date.now();
+    awFail = setTimeout(() => hideWait(0, true), 20000);   // never leave the screen blocked
+  }
+  function finishBar() {
+    if (aw.classList.contains('done')) return;
+    aw.classList.add('done');
+    awBar.style.width = getComputedStyle(awBar).width;  // freeze where the animation is,
+    awBar.style.animation = 'none'; void awBar.offsetWidth;
+    awBar.style.width = '100%';                         // then glide to full
+    setSub(DONE[awText.textContent] || '');
+  }
+  function hideWait(extra, failed) {
+    if (aw.hidden) return;
+    clearTimeout(awFail); clearTimeout(awHide); clearInterval(awTick);
+    if (!failed) finishBar();
+    const wait = Math.max(0, MIN_MS - (Date.now() - awShown)) + (extra || 0);
+    awHide = setTimeout(() => {
+      aw.classList.remove('show');
+      awHide = setTimeout(() => { aw.hidden = true; }, 260);
+    }, wait);
+  }
+  /* Log in: show while the request runs (the form's own handler is untouched).
+     The overlay is dropped when the portal opens (success) or an error appears. */
+  $('loginForm').addEventListener('submit', () => showWait('Logging in'));
+  new MutationObserver(() => { if (!document.body.classList.contains('locked')) hideWait(0); })
+    .observe(document.body, {attributes: true, attributeFilter: ['class']});
+  new MutationObserver(() => { if ($('lerr').textContent.trim()) hideWait(0, true); }).observe($('lerr'), {childList: true});
+
+  /* Log out: show the overlay first, then run the existing logout handler */
+  let outBusy = false, outPass = false;
+  document.addEventListener('click', e => {
+    const l = e.target.closest('#logout');
+    if (!l || outPass) return;
+    e.stopImmediatePropagation(); e.preventDefault();
+    if (outBusy) return;
+    outBusy = true; setOpen(false); showWait('Logging out');
+    setTimeout(() => {
+      outPass = true;
+      try { l.click(); } finally { outPass = false; outBusy = false; }
+      hideWait(350);
+    }, 1700);
+  }, true);
+})();
+</script>
+<script src="modules.js"></script>
+<script>
+/* Acadaelash landing page: Login / Sign Up switching and login validation.
+   Reuses the existing #toLogin / #toSignup buttons and handlers; no Supabase calls here. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!$('login')) return;
+  $('lp-year').textContent = new Date().getFullYear();
+  const top = () => $('lp-home').scrollIntoView({behavior: reduce.matches ? 'auto' : 'smooth', block: 'start'});
+  const tabIn = $('tab-signin'), tabUp = $('tab-signup');
+  function syncTabs() {
+    const up = !$('signupForm').hidden;
+    tabIn.setAttribute('aria-selected', String(!up)); tabIn.tabIndex = up ? -1 : 0;
+    tabUp.setAttribute('aria-selected', String(up)); tabUp.tabIndex = up ? 0 : -1;
+  }
+  ['loginForm', 'signupForm'].forEach(id => new MutationObserver(syncTabs).observe($(id), {attributes: true, attributeFilter: ['hidden']}));
+  function openAuth(kind, focus = true) {
+    if (kind === 'signup' && $('signupForm').hidden) $('toSignup').click();
+    if (kind === 'signin' && $('loginForm').hidden) $('toLogin').click();
+    syncTabs();
+    if (!focus) return;
+    top();
+    setTimeout(() => (kind === 'signup' ? $('sfirst') : $('lemail')).focus({preventScroll: true}), reduce.matches ? 0 : 350);
+  }
+  $('login').addEventListener('click', e => {
+    const a = e.target.closest('[data-auth]');
+    if (a) { openAuth(a.dataset.auth); return; }
+    if (e.target.closest('[data-scroll]')) top();
+  });
+  [tabIn, tabUp].forEach(t => t.addEventListener('click', () => openAuth(t.dataset.tab, false)));
+  $('lp-panel').querySelector('.lp-tabs').addEventListener('keydown', e => {
+    if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+    e.preventDefault();
+    const next = $('signupForm').hidden ? tabUp : tabIn;
+    openAuth(next.dataset.tab, false); next.focus();
+  });
+  $('lforgot').addEventListener('click', () => {
+    const open = $('lforgotnote').hidden;
+    $('lforgotnote').hidden = !open;
+    $('lforgot').setAttribute('aria-expanded', String(open));
+  });
+  $('login').addEventListener('submit', e => {
+    if (e.target.id !== 'loginForm') return;
+    const email = $('lemail').value.trim(), pass = $('lpass').value;
+    let msg = '', field = null;
+    if (!email) { msg = 'Enter your email address.'; field = $('lemail'); }
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { msg = 'Enter a valid email address, for example name@school.edu.'; field = $('lemail'); }
+    else if (!pass) { msg = 'Enter your password.'; field = $('lpass'); }
+    ['lemail', 'lpass'].forEach(id => $(id).classList.remove('invalid'));
+    if (!msg) return;
+    e.preventDefault(); e.stopPropagation(); // the existing handler would otherwise report "Wrong email or password"
+    $('lmsg').textContent = ''; $('lerr').textContent = msg;
+    field.classList.add('invalid'); field.focus();
+  }, true);
+  ['lemail', 'lpass'].forEach(id => $(id).addEventListener('input', () => $(id).classList.remove('invalid')));
+})();
+</script>
+<script>
+/* Student profile: count-up numbers, cursor spotlight, copy to clipboard, animated light/dark switch. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const root = document.documentElement;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const layout = document.querySelector('.pf-layout');
+  const page = $('page-profile');
+  if (!layout || !page) return;
+
+  /* Remember where the last click/tap happened: the theme change grows out of that point */
+  document.addEventListener('pointerdown', e => { window.__vtOrigin = {x: e.clientX, y: e.clientY}; }, true);
+  document.addEventListener('keydown', () => { window.__vtOrigin = null; }, true);
+
+  /* Numbers count up when the profile opens */
+  function animate(el) {
+    const to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec || '0', 10);
+    if (!isFinite(to)) return;
+    cancelAnimationFrame(el._raf);
+    if (reduce.matches) { el.textContent = to.toFixed(dec); return; }
+    const t0 = performance.now(), dur = 900;
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = (to * e).toFixed(dec);
+      if (p < 1) el._raf = requestAnimationFrame(step);
+    };
+    el._raf = requestAnimationFrame(step);
+  }
+  window.pfCountTo = (el, to, dec = 0) => {
+    el.dataset.to = String(to); el.dataset.dec = String(dec);
+    el.textContent = to.toFixed(dec);
+    if (!page.hidden) animate(el);
+  };
+  new MutationObserver(() => {
+    if (!page.hidden) layout.querySelectorAll('[data-to]').forEach(animate);
+  }).observe(page, {attributes: true, attributeFilter: ['hidden']});
+
+  /* Spotlight that follows the cursor */
+  layout.addEventListener('pointermove', e => {
+    const c = e.target.closest('.pf-fx');
+    if (!c) return;
+    const r = c.getBoundingClientRect();
+    c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  }, {passive: true});
+
+  /* Click to copy (student ID, email) */
+  function copyText(txt) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(txt);
+    return new Promise((ok, no) => {
+      const ta = Object.assign(document.createElement('textarea'), {value: txt});
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy') ? ok() : no(); } catch (e) { no(e); } finally { ta.remove(); }
+    });
+  }
+  layout.addEventListener('click', e => {
+    const c = e.target.closest('[data-copy]');
+    if (!c) return;
+    const txt = $(c.dataset.copy).textContent.trim();
+    if (!txt) return;
+    copyText(txt).then(() => {
+      c.classList.add('copied'); setTimeout(() => c.classList.remove('copied'), 1100);
+      window.alert('Copied: ' + txt);
+    }).catch(() => {});
+  });
+
+  /* Enter / Space work on the clickable cards */
+  layout.addEventListener('keydown', e => {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    const el = e.target.closest('[role="link"], [role="button"]');
+    if (!el || !layout.contains(el)) return;
+    e.preventDefault(); el.click();
+  });
+
+  /* Light / Dark switch */
+  const tgl = $('pf-theme'), lab = $('pf-theme-label');
+  const cur = () => root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  const sync = () => {
+    const dark = cur() === 'dark';
+    tgl.setAttribute('aria-checked', String(dark));
+    lab.textContent = dark ? 'Dark mode' : 'Light mode';
+  };
+  sync();
+  new MutationObserver(sync).observe(root, {attributes: true, attributeFilter: ['data-theme']});
+  tgl.addEventListener('click', () => {
+    const next = cur() === 'dark' ? 'light' : 'dark';
+    const b = document.querySelector('#pmenu [data-theme-opt="' + next + '"]');  // same handler as the account menu
+    if (b) b.click(); else root.setAttribute('data-theme', next);
+  });
+})();
+</script>
+<script>
+/* AI Tutor: a chat panel that answers from the student's own course data.
+   - With the Node server and ANTHROPIC_API_KEY set, the question plus the most relevant course material goes to /api/ai/chat.
+   - Without it (or on plain Live Server) the tutor runs in offline mode and answers from the same data locally. */
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const btn = $('aibtn'), panel = $('aipanel');
+  if (!btn || !panel) return;
+  const log = $('ai-log'), input = $('ai-input'), sendBtn = $('ai-send'), sugg = $('ai-sugg'), sel = $('ai-course');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  let history = [], busy = false, mode = null;       // mode: 'ai' | 'offline' | null (not checked yet)
+  let LRN = null, LRNP = null, LRNFOR = null, CH = [];
+
+  const esc = t => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+  const key = () => 'ai-chat-' + me;
+  const fname = () => { try { return stu().first_name; } catch (e) { return ''; } };
+
+  /* ---------- tiny markdown (bold, code, lists, #links) ---------- */
+  function md(src) {
+    const inline = t => esc(t).replace(/`([^`]+)`/g, '<code>$1</code>').replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
+      .replace(/\[([^\]]+)\]\((#[A-Za-z0-9/_-]*)\)/g, '<a href="$2">$1</a>');
+    const out = []; let list = null, code = null;
+    const flush = () => { if (list) { out.push('<' + list.t + '>' + list.i.map(x => '<li>' + inline(x) + '</li>').join('') + '</' + list.t + '>'); list = null; } };
+    String(src).split('\n').forEach(line => {
+      if (/^```/.test(line)) { if (code) { out.push('<pre><code>' + esc(code.join('\n')) + '</code></pre>'); code = null; } else { flush(); code = []; } return; }
+      if (code) { code.push(line); return; }
+      const li = /^\s*([-*\u2022]|\d+[.)])\s+(.*)$/.exec(line);
+      if (li) { const t = /\d/.test(li[1]) ? 'ol' : 'ul'; if (!list || list.t !== t) { flush(); list = {t, i: []}; } list.i.push(li[2]); return; }
+      flush();
+      if (!line.trim()) return;
+      const h = /^#{1,4}\s+(.*)$/.exec(line);
+      out.push(h ? '<p><b>' + inline(h[1]) + '</b></p>' : '<p>' + inline(line) + '</p>');
+    });
+    if (code) out.push('<pre><code>' + esc(code.join('\n')) + '</code></pre>');
+    flush();
+    return out.join('');
+  }
+
+  /* ---------- messages ---------- */
+  function add(role, text, extra) {
+    const row = document.createElement('div');
+    row.className = 'ai-msg ' + (role === 'user' ? 'me' : 'bot') + (extra ? ' ' + extra : '');
+    row.innerHTML = role === 'user' ? '<p>' + esc(text).replace(/\n/g, '<br>') + '</p>' : md(text);
+    log.appendChild(row);
+    log.scrollTo({top: log.scrollHeight, behavior: reduce.matches ? 'auto' : 'smooth'});
+    return row;
+  }
+  const typing = () => add('bot', '', 'typing').appendChild(Object.assign(document.createElement('span'), {className: 'ai-dots', innerHTML: '<i></i><i></i><i></i>'}));
+  const untype = () => { const t = log.querySelector('.typing'); if (t) t.remove(); };
+  const save = () => { try { sessionStorage.setItem(key(), JSON.stringify(history.slice(-30))); } catch (e) { /* storage blocked */ } };
+
+  /* ---------- the student's data ---------- */
+  async function loadLearning() {
+    if (LRN && LRNFOR === me) return LRN;
+    if (LRNP && LRNFOR === me) return LRNP;
+    LRNFOR = me; LRN = null;
+    LRNP = (async () => {
+      const out = {lessons: [], materials: []};
+      let cred = null; try { cred = JSON.parse(sessionStorage.getItem('cred')); } catch (e) { /* ignore */ }
+      if (cred) { try { const r = await sb.rpc('get_learning', {p_email: cred.email, p_hash: cred.hash}); if (r.data && Array.isArray(r.data.lessons)) out.lessons = r.data.lessons; } catch (e) { /* lessons optional */ } }
+      try { const r = await sb.from('course_materials').select('*'); if (!r.error && Array.isArray(r.data)) out.materials = r.data; } catch (e) { /* optional */ }
+      CH = buildChunks(out); LRN = out; return out;
+    })();
+    return LRNP;
+  }
+  const plain = html => {
+    if (!html) return '';
+    const doc = new DOMParser().parseFromString(String(html), 'text/html');   // inert: nothing runs or loads
+    doc.body.querySelectorAll('p,li,h1,h2,h3,h4,br,tr,pre').forEach(e => e.append('\n'));
+    return doc.body.textContent.replace(/[ \t]+/g, ' ').replace(/\n\s*\n+/g, '\n').trim();
+  };
+  function pieces(text, size = 900) {
+    const out = []; let cur = '';
+    String(text || '').split(/\n+/).forEach(par => {
+      if ((cur + ' ' + par).length > size && cur) { out.push(cur.trim()); cur = ''; }
+      cur += ' ' + par;
+    });
+    if (cur.trim()) out.push(cur.trim());
+    return out.slice(0, 8);
+  }
+  function buildChunks(L) {
+    const out = [], ids = new Set(active().map(x => x.c.subject_id)), codes = new Set(active().map(x => x.c.course_code));
+    const cname = sid => { const c = db.courses.find(x => x.subject_id === sid); return c ? c.course_name : ''; };
+    active().forEach(({c}) => { if (c.description) out.push({sid: c.subject_id, title: c.course_name + ' (overview)', text: c.description, link: '#modules/c/' + c.subject_id}); });
+    db.modules.filter(m => ids.has(m.subject_id)).forEach(m => out.push({sid: m.subject_id, title: cname(m.subject_id) + ': Module ' + m.module_no + ' - ' + m.title, text: m.title + '. ' + (m.description || ''), link: '#modules'}));
+    L.lessons.filter(l => ids.has(l.subject_id)).forEach(l => {
+      const head = cname(l.subject_id) + ': ' + l.module_title + ' > ' + l.title, link = '#modules/l/' + l.lesson_id;
+      const base = [l.summary, (l.objectives && l.objectives.length) ? 'Objectives: ' + l.objectives.join('; ') : ''].filter(Boolean).join(' ');
+      out.push({sid: l.subject_id, title: head, text: base || l.title, link, lesson: true});
+      pieces(plain(l.body_html)).forEach(t => out.push({sid: l.subject_id, title: head, text: t, link}));
+    });
+    L.materials.filter(m => codes.has(m.course_code)).forEach(m => {
+      const c = db.courses.find(x => x.course_code === m.course_code);
+      pieces(m.content).forEach(t => out.push({sid: c ? c.subject_id : 0, title: (c ? c.course_name : 'Course') + ': ' + m.title, text: t, link: '#courses'}));
+    });
+    return out;
+  }
+
+  const STOP = new Set('the and for with this that what how why when who which can could would should does did please tell explain give show help some any more most than then them they their there here have has had not but into out about you your our was were are'.split(' '));
+  const toks = t => [...new Set((String(t).toLowerCase().match(/[a-z0-9]{3,}/g) || []).filter(w => !STOP.has(w)))];
+  function retrieve(q, sid, k) {
+    const qt = toks(q);
+    if (!qt.length) return [];
+    return CH.filter(c => !sid || c.sid === sid).map(c => {
+      const t = c.text.toLowerCase(), ti = c.title.toLowerCase();
+      let s = 0;
+      qt.forEach(w => { if (t.includes(w)) s += 1 + Math.min(3, t.split(w).length - 2) * .3; if (ti.includes(w)) s += 2; });
+      return {c, s};
+    }).filter(x => x.s > 0).sort((a, b) => b.s - a.s).slice(0, k || 5);
+  }
+
+  function summary() {
+    const s = stu(), g = gpa(), L = [];
+    L.push('STUDENT: ' + s.first_name + ' ' + s.last_name + ', ' + prog().program_name + ' (' + s.program + '), ' + s.year_level + ', status ' + s.enrollment_status + '.');
+    L.push('Today: ' + new Date().toLocaleDateString('en-PH', {weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'}) + '. Total units: ' + units() + '. Current GPA: ' + (g == null ? 'no grades yet' : g.toFixed(2)) + '.');
+    L.push('COURSES:');
+    active().forEach(({e, c}) => { const gr = gradeOf(e); L.push('- ' + code(c.subject_id) + ' ' + c.course_name + ' (instructor ' + c.instructor + ', ' + c.units + ' units, grade: ' + (gr ? gr.score + ' = ' + toGPA(gr.score).text + ' ' + toGPA(gr.score).status : 'not graded yet') + ')'); });
+    const w = myWork();
+    L.push('ASSIGNMENTS:');
+    if (!w.length) L.push('- none');
+    w.forEach(x => L.push('- ' + code(x.c.subject_id) + ': ' + x.a.title + ', due ' + fmtDate(x.a.due_date) + ', ' + (x.sub ? 'submitted' + (x.sub.score != null ? ' (score ' + x.sub.score + ')' : '') : 'NOT submitted')));
+    return L.join('\n');
+  }
+  async function contextFor(q) {
+    await loadLearning();
+    const sid = Number(sel.value) || 0;
+    const prev = history.filter(m => m.role === 'user').slice(-2, -1)[0];            // short follow-ups reuse the last topic
+    const query = toks(q).length < 2 && prev ? prev.content + ' ' + q : q;
+    let hits = retrieve(query, sid, 5);
+    if (!hits.length) hits = CH.filter(c => c.lesson && (!sid || c.sid === sid)).slice(0, 3).map(c => ({c, s: 0}));
+    let ctx = summary() + '\n\nRELEVANT COURSE MATERIAL:\n', used = 0;
+    hits.forEach((h, i) => { const t = '[' + (i + 1) + '] ' + h.c.title + '\n' + h.c.text.slice(0, 1400) + '\n\n'; if (used + t.length < 7000) { ctx += t; used += t.length; } });
+    if (!hits.length) ctx += '(no matching material found)\n';
+    return {ctx, hits};
+  }
+
+  /* ---------- offline answers ---------- */
+  function offline(q, hits) {
+    const t = q.toLowerCase(), w = myWork(), g = gpa();
+    if (/\b(hi|hello|hey|kumusta|good (morning|afternoon|evening))\b/.test(t) && t.length < 40) return 'Hi ' + fname() + '! Ask me about a lesson, your assignments, grades or courses.';
+    if (/pending|due|deadline|assignment|homework|submit|late/.test(t)) {
+      const p = w.filter(x => !x.sub);
+      if (!p.length) return w.length ? 'You have no pending assignments. Everything has been submitted.' : 'You have no assignments yet.';
+      return 'You have **' + p.length + '** pending assignment' + (p.length > 1 ? 's' : '') + ':\n' + p.map(x => '- **' + x.a.title + '** (' + code(x.c.subject_id) + '), due ' + fmtDate(x.a.due_date)).join('\n');
+    }
+    if (/gpa|grade|score|standing|pass|fail/.test(t)) {
+      const rows = active().map(({e, c}) => { const gr = gradeOf(e); return '- **' + code(c.subject_id) + '** ' + c.course_name + ': ' + (gr ? gr.score + ' (' + toGPA(gr.score).text + ', ' + toGPA(gr.score).status + ')' : 'not graded yet'); });
+      return 'Your current GPA is **' + (g == null ? 'not available yet' : g.toFixed(2)) + '**.\n' + rows.join('\n');
+    }
+    if (/\b(courses?|subjects?|enrolled|units?|instructor|professor|teacher)\b/.test(t) && !hits.length)
+      return 'You are enrolled in **' + active().length + '** course' + (active().length === 1 ? '' : 's') + ' (' + units() + ' units):\n' + active().map(({c}) => '- **' + code(c.subject_id) + '** ' + c.course_name + ' with ' + c.instructor + ', ' + c.units + ' units').join('\n');
+    if (/who am i|my (name|profile|program|year)/.test(t)) { const s = stu(); return 'You are **' + s.first_name + ' ' + s.last_name + '**, ' + prog().program_name + ' (' + s.program + '), ' + s.year_level + '.'; }
+    if (hits.length) {
+      const seen = new Set();
+      const rows = hits.filter(h => !seen.has(h.c.title) && seen.add(h.c.title)).slice(0, 3).map(h => '- **' + h.c.title + '**: ' + h.c.text.replace(/\s+/g, ' ').slice(0, 240) + (h.c.text.length > 240 ? '...' : '') + ' [Open](' + h.c.link + ')');
+      return 'Here is what I found in your course materials:\n' + rows.join('\n');
+    }
+    return 'I could not find that in your course materials. Try asking about a lesson topic, or about your assignments, grades or courses.';
+  }
+
+  /* ---------- sending ---------- */
+  async function ask(q) {
+    q = q.trim();
+    if (!q || busy) return;
+    busy = true; sendBtn.disabled = true; input.value = ''; grow(); sugg.hidden = true;
+    history.push({role: 'user', content: q}); add('user', q); typing();
+    let reply = null, hits = [], note = '';
+    try {
+      const c = await contextFor(q); hits = c.hits;
+      if (mode !== 'offline') {
+        try {
+          const r = await fetch('/api/ai/chat', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({messages: history.slice(-10), context: c.ctx})});
+          const d = await r.json().catch(() => ({}));
+          if (r.ok && d.reply) { reply = d.reply; setMode('ai'); }
+          else if (r.status === 429) note = d.error;
+          else if (r.status === 503 || r.status === 404 || r.status === 405) setMode('offline');
+          else note = d.error || 'The AI is unavailable right now.';
+        } catch (e) { setMode('offline'); }
+      }
+      if (reply == null) {
+        if (!reduce.matches) await new Promise(r => setTimeout(r, 450));
+        reply = (note ? note + '\n\n' : '') + offline(q, hits);
+      }
+    } catch (e) { reply = 'Sorry, something went wrong while reading your course data. Please try again.'; }
+    untype(); add('bot', reply);
+    history.push({role: 'assistant', content: reply}); save();
+    busy = false; sendBtn.disabled = false; input.focus();
+  }
+
+  function setMode(m) {
+    mode = m;
+    const st = $('ai-status');
+    st.className = m === 'ai' ? 'on' : '';
+    st.querySelector('span').textContent = m === 'ai' ? 'AI connected' : m === 'offline' ? 'Offline mode: uses your course data' : 'Checking...';
+  }
+  async function checkMode() {
+    try { const r = await fetch('/api/ai/status', {cache: 'no-store'}); const d = r.ok ? await r.json() : null; setMode(d && d.enabled ? 'ai' : 'offline'); }
+    catch (e) { setMode('offline'); }
+  }
+
+  /* ---------- panel ---------- */
+  function suggestions() {
+    const out = [], a = active();
+    if (a.length) out.push('Summarize ' + a[0].c.course_name);
+    out.push('What assignments are due soon?', 'How am I doing in my grades?');
+    const l = CH.find(c => c.lesson);
+    out.push(l ? 'Explain ' + l.title.split(' > ').pop() : 'What courses am I enrolled in?');
+    sugg.innerHTML = out.slice(0, 4).map(t => '<button type="button">' + esc(t) + '</button>').join('');
+    sugg.hidden = history.length > 0;
+  }
+  function fillCourses() {
+    const v = sel.value;
+    sel.innerHTML = '<option value="">All my courses</option>' + active().map(({c}) => '<option value="' + c.subject_id + '">' + esc(code(c.subject_id) + ' ' + c.course_name) + '</option>').join('');
+    sel.value = v;
+  }
+  function restore() {
+    log.innerHTML = '';
+    try { history = JSON.parse(sessionStorage.getItem(key())) || []; } catch (e) { history = []; }
+    add('bot', 'Hi ' + fname() + '! I am your AI tutor. I can explain your lessons, list what is due, and check your grades. What would you like to know?');
+    history.forEach(m => add(m.role, m.content));
+  }
+  function open() {
+    const q = $('qfab'); if (q && q.getAttribute('aria-expanded') === 'true') q.click();
+    if (!panel.hidden) return;
+    fillCourses(); if (!log.children.length || LRNFOR !== me) restore();
+    panel.hidden = false; btn.setAttribute('aria-expanded', 'true'); btn.classList.add('open');
+    if (mode === null) setMode(null); checkMode();
+    loadLearning().then(suggestions);
+    suggestions();
+    setTimeout(() => input.focus(), 60);
+  }
+  function close(focus) { panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); btn.classList.remove('open'); if (focus) btn.focus(); }
+  const grow = () => { input.style.height = 'auto'; input.style.height = Math.min(input.scrollHeight, 110) + 'px'; };
+
+  btn.addEventListener('click', () => panel.hidden ? open() : close());
+  $('ai-close').addEventListener('click', () => close(true));
+  $('ai-new').addEventListener('click', () => { history = []; try { sessionStorage.removeItem(key()); } catch (e) { /* ignore */ } restore(); suggestions(); input.focus(); });
+  $('ai-form').addEventListener('submit', e => { e.preventDefault(); ask(input.value); });
+  input.addEventListener('input', grow);
+  input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey && !e.isComposing) { e.preventDefault(); ask(input.value); } });
+  sugg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) ask(b.textContent); });
+  log.addEventListener('click', e => { if (e.target.closest('a[href^="#"]') && window.innerWidth <= 640) close(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && !panel.hidden) close(true); });
+  document.addEventListener('click', e => {
+    if (e.target.closest('[data-ai="open"]')) open();
+    if (e.target.closest('#qfab') && !panel.hidden) close();
+  });
+})();
+</script>
+<script src="interactions.js"></script>
+</body>
+</html>

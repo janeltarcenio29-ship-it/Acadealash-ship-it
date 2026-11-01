@@ -1,0 +1,12 @@
+{
+  "name": "Acadaelash Learning Portal",
+  "short_name": "Acadaelash",
+  "description": "Acadaelash learning management system",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F4F0E6",
+  "theme_color": "#151C2C",
+  "icons": [
+    {"src": "favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}
